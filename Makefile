@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/29 14:46:52 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/29 14:48:26 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ endif
 # _.-=+=-._.-=+=-._[ Source & Bin ]_.-=+=-._.-=+=-._ #
 
 SRC_DIR = src/
-OBJ_DIR = obj_libft/
+OBJ_DIR = obj_$(NAME)/
 
 SRCS = \
 
