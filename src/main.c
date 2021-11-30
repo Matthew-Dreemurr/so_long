@@ -1,44 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 16:09:48 by mahadad          ###   ########.fr       */
+/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/30 16:55:02 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "so_long.h"
 
-/* --== [ prototypes ] ==--- */
-
-typedef struct s_vec
+int	main(int ac, char **av)
 {
-	long	x;
-	long	y;
-}t_vec;
+	t_data	data;
 
-typedef struct s_player
-{
-	t_vec	coord;
-	size_t	col_item;
-	size_t	n_move;
-}t_player;
-
-typedef struct s_map
-{
-	char	**grid;
-	t_vec	item;
-	size_t	n_item;
-}t_map;
-
-typedef struct s_data
-{
-	t_player	plyr;
-	t_map		map;
-}t_data;
-
-#endif
+	if (av != 2 || !av[1])
+		return (EXIT_FAILURE);
+	game_init(&av[1], &data);
+	return (EXIT_SUCCESS);
+}

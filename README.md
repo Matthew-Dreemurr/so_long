@@ -29,7 +29,12 @@ This project has been coded according to the `NormeV3` standard.
   * [ ] Clicking on the red cross on the window’s frame must close the window and quit the program cleanly.
   * [ ] The use of images of the minilibX is strongly recommended.
 * [ ] Your program must take as a first argument a map description file with the `.ber` extension.
-  * [ ] The map must be composed of only 5 possible characters: 0 for an empty space, 1 for a wall, C for a collectible, E for map exit and P for the player’s starting position.
+  * [ ] The map must be composed of only 5 possible characters:
+    * `0` for an empty space
+    * `1` for a wall
+    * `C` for a collectible
+    * `E` for map exit
+    * `P` for the player’s starting position
   * [ ] This is a simple valid map:
 
     ```ber

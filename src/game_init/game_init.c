@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   game_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 16:09:48 by mahadad          ###   ########.fr       */
+/*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/30 17:12:27 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "game_init.h"
 
-/* --== [ prototypes ] ==--- */
-
-typedef struct s_vec
+static void	read_map(const char **map, t_data *data_file)
 {
-	long	x;
-	long	y;
-}t_vec;
+	int	fd;
 
-typedef struct s_player
+	fd = open(map, O_RDONLY);
+	if (fd < 0)
+		exit (EXIT_FAILURE);
+}
+
+void	game_init(const char **map, t_data *data_file)
 {
-	t_vec	coord;
-	size_t	col_item;
-	size_t	n_move;
-}t_player;
-
-typedef struct s_map
-{
-	char	**grid;
-	t_vec	item;
-	size_t	n_item;
-}t_map;
-
-typedef struct s_data
-{
-	t_player	plyr;
-	t_map		map;
-}t_data;
-
-#endif
+	read_map(*map, data_file);
+}
