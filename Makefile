@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/30 20:25:10 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/30 21:55:52 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,11 @@ endif
 
 SRC_DIR = src/
 OBJ_DIR = obj_$(NAME)/
-
+INCLUDE_DIR = includes/
 DEP_LIBFT = libft/libft.a
 
-HEADER = $(notdir $(shell find includes src -type f -name "*.h"))
+HEADER = $(shell find includes src -type f -name "*.h")
+HEADER_DEP = $(addprefix $(INCLUDE_DIR), $(notdir $(HEADER)))
 SRCS = $(shell find $(SRC_DIR) -type f -name "*.c")
 
 SRC		= $(notdir $(SRCS))
@@ -46,7 +47,7 @@ OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
 
 VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
 
-all: $(DEP_LIBFT) $(HEADER) $(NAME)
+all: $(DEP_LIBFT) $(HEADER_DEP) $(NAME)
 	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 	@printf "[Compiled /w this flag $(CFLAGS)]"
@@ -54,6 +55,11 @@ all: $(DEP_LIBFT) $(HEADER) $(NAME)
 $(DEP_LIBFT):
 	make -C $(dir $(DEP_LIBFT))
 
+# wtf !? i don't understand why is work but it's work
+$(INCLUDE_DIR)%.h: %.h
+	@cp -v $< $@
+
+# magic happen, i don't no if is becose 
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\033[32;1m$@\033[32;0m\n"
@@ -68,6 +74,8 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 
 clean:
 	make clean -C $(dir $(DEP_LIBFT))
+	rm -rf $(HEADER_DEP)
+	@printf "\033[31;1m[Remove $(INCLUDE_DIR).*h]\033[32;0m\n"
 	@rm -rf $(OBJS)
 	@printf "\033[31;1m[Remove *.o]\033[32;0m\n"
 	@rm -rf $(OBJ_DIR)
