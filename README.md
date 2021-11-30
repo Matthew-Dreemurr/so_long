@@ -30,9 +30,9 @@ This project is a very small 2D game. It is built to make you work with textures
     1111111111111
     ```
 
-  * [ ] The map must be closed/surrounded by walls, if not the program must return an error.
-    * [ ] Map must have at least one exit, one collectible, and one starting position.
-    * [ ] You don’t need to check if there’s a valid path in the map.
-    * [ ] The map must be rectangular.
-    * [ ] You must be able to parse any kind of map, as long as it respects the rules of the map.
-    * [ ] If any misconfiguration of any kind is encountered in the file, the program must exit properly and return "Error\n" followed by an explicit error message of your choice.
+* [ ] The map must be closed/surrounded by walls, if not the program must return an error.
+  * [ ] Map must have at least one exit, one collectible, and one starting position.
+  * [ ] You don’t need to check if there’s a valid path in the map.
+  * [ ] The map must be rectangular.
+  * [ ] You must be able to parse any kind of map, as long as it respects the rules of the map.
+  * [ ] If any misconfiguration of any kind is encountered in the file, the program must exit properly and return "Error\n" followed by an explicit error message of your choice.
