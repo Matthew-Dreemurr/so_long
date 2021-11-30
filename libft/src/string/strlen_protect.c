@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   strlen_protect.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/11/09 14:02:17 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/09 14:03:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+/**
+ * @brief Strlen but dont crash with a NULL pointer.
+ */
+size_t	strlen_protect(const char *s)
 {
-	t_data	data;
+	char	*start;
 
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	start = (char *)s;
+	while (s && *s)
+		s++;
+	return ((size_t)(s - start));
 }

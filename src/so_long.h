@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/30 20:33:49 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-int	main(int ac, char **av)
-{
-	t_data	data;
+/* ----==  [ includes ] ==---- */
 
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
-}
+/* free, malloc, exit */
+# include <stdlib.h>
+
+/* open */
+# include <fcntl.h>
+
+/* close, read, write */
+# include <unistd.h>
+
+/* printf, perror, strerror */
+# include <stdio.h>
+
+# include <stddef.h>
+# include "struct.h"
+
+#endif

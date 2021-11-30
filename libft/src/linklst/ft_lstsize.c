@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 17:08:15 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/20 12:45:17 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+/**
+ * @brief Counts the number of elements in a list.
+ * 
+ * @param lst The beginning of the list.
+ * @return int Length of the list.
+ */
+int	ft_lstsize(t_list *lst)
 {
-	t_data	data;
+	int	len;
 
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	if (!lst)
+		return (0);
+	len = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		len++;
+	}
+	return (len);
 }

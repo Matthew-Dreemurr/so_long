@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   rev_char_arr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 16:28:03 by mahadad          ###   ########.fr       */
+/*   Created: 2021/11/12 16:06:36 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/14 17:17:06 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-/* ----==  [ includes ] ==---- */
+void	rev_char_arr(char *str, size_t size)
+{
+	size_t	x;
+	size_t	mid;
+	char	tmp;
 
-/* free, malloc, exit */
-# include <stdlib.h>
-
-/* open */
-# include <fcntl.h>
-
-/* close, read, write */
-# include <unistd.h>
-
-/* printf, perror, strerror */
-# include <stdio.h>
-
-# include <stddef.h>
-# include "struct.h"
-
-#endif
+	if (size == 1)
+		return ;
+	x = 0;
+	mid = size / 2;
+	size--;
+	while (size >= mid)
+	{
+		tmp = str[x];
+		str[x] = str[size];
+		str[size] = tmp;
+		size--;
+		x++;
+	}
+}

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/13 10:09:49 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+/**
+ * @brief Itère sur la list lst et applique la fonction f aucontenu chaque
+ *        élément.
+ * 
+ * @param lst L’adresse du pointeur vers un élément.
+ * @param f   L’adresse de la fonction à appliquer.
+ */
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_data	data;
-
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_return.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/11/16 13:49:16 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/16 13:53:20 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
+#include <stdlib.h>
 
-int	main(int ac, char **av)
+/**
+ * @brief 
+ * 
+ * @param ptr 
+ * @param ret 
+ * @return int 
+ */
+void	*free_return(void *ptr, void *ret)
 {
-	t_data	data;
-
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	free (ptr);
+	return (ret);
 }

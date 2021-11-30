@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 17:23:14 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/20 12:45:15 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+/**
+ * @brief Returns the last element of the list.
+ * 
+ * @param lst The beginning of the list.
+ * @return t_list* Last element of the list.
+ */
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_data	data;
-
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	if (!lst)
+		return (NULL);
+	while (lst)
+	{
+		if (!lst->next)
+			break ;
+		lst = lst->next;
+	}
+	return (lst);
 }

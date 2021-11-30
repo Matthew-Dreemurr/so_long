@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   putstr_ret_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 13:56:02 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/08 15:26:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
+#include <unistd.h>
 
-int	main(int ac, char **av)
+/**
+ * @brief    Outputs the string ’s’ to `stdout`.
+ *
+ * @param s  The string to output.
+ *
+ * @return   Return numbre of char print.
+ */
+int	putstr_ret_int(char *s)
 {
-	t_data	data;
+	char	*ptr;
 
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	if (!s)
+		return (0);
+	ptr = s;
+	while (*ptr)
+		ptr++;
+	return (write(STDOUT_FILENO, s, (size_t)(ptr - s)));
 }

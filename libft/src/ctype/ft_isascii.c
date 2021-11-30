@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/01 16:33:43 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+/*
+*  LIBRARY
+*       Standard C Library (libc, -lc)
+*
+*  SYNOPSIS
+*       #include <ctype.h>
+*
+*       int
+*       isascii(int c);
+*
+*  DESCRIPTION
+*       The isascii() function tests for an ASCII character, which is any charac-
+*       ter between 0 and octal 0177 inclusive.
+*/
+
+int	ft_isascii(int c)
 {
-	t_data	data;
-
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	return ((c >= 0) && (c <= 127));
 }

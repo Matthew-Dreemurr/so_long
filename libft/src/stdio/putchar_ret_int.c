@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   putchar_ret_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 14:20:58 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/07 13:28:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
+#include <unistd.h>
 
-int	main(int ac, char **av)
+/**
+ * @brief       Outputs the character ’c’ to the `stdout`.
+ *
+ * @param c     The character to output.
+ *
+ * @return int  Return the number of char print.
+ */
+int	putchar_ret_int(char c)
 {
-	t_data	data;
-
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	return (write(STDOUT_FILENO, &c, 1));
 }

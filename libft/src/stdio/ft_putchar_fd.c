@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 14:20:58 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/07 13:22:50 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
+#include <unistd.h>
 
-int	main(int ac, char **av)
+/**
+ * @brief Outputs the character ’c’ to the given file
+ *        descriptor.
+ * 
+ * @param c  The character to output.
+ * @param fd The file descriptor on which to write.
+ */
+void	ft_putchar_fd(char c, int fd)
 {
-	t_data	data;
-
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
 }

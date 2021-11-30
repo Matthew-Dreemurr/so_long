@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 20:13:26 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 16:12:49 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/20 12:45:14 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+/**
+ * @brief Adds the element ’new’ at the beginning of thelist.
+ * 
+ * @param alst The address of a pointer to the first link ofa list.
+ * @param new  The address of a pointer to the element to beadded to the list.
+ */
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_data	data;
-
-	if (ac != 2 || !av[1])
-		return (EXIT_FAILURE);
-	game_init(av[1], &data);
-	return (EXIT_SUCCESS);
+	if (!alst | !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }
