@@ -2,6 +2,16 @@
 
 This project is a very small 2D game. It is built to make you work with textures, sprites. And some very basic gameplay elements.
 
+## Why does the code look weird ?
+
+The 42 curriculum asks us to code according to the `Norme`, this standard forbids us certain control structures (like `do while`, `for`, ...), a limit of 25 lines and 5 variables per function, 5 function max per `.c` and and other constraints.
+
+This project has been coded according to the `NormeV3` standard.
+
+[NormeV3 PDF](https://github.com/42School/norminette) used in this projetc
+
+[Norme repo](https://github.com/42School/norminette)
+
 ## The constraints
 
 * [ ] You must use the miniLibX. Either the version that is available on the operating system, or from its sources. If you choose to work with the sources, you will need to apply the same rules for your libft as those written above in `Common Instructions` part.
