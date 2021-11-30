@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 16:55:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/30 17:16:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	main(int ac, char **av)
 
 	if (av != 2 || !av[1])
 		return (EXIT_FAILURE);
-	game_init(&av[1], &data);
+	game_init(av[1], &data);
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/30 13:16:47 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/30 17:27:53 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ endif
 SRC_DIR = src/
 OBJ_DIR = obj_$(NAME)/
 
+DEP_LIBFT = src/libft/libft.a
+
 SRCS = \
 
 SRC		= $(notdir $(SRCS))
@@ -43,10 +45,13 @@ OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
 
 VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
 
-all: $(NAME)
+all: $(DEP_LIBFT) $(NAME)
 	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 	@printf "[Compiled /w this flag $(CFLAGS)]"
+
+$(DEP_LIBFT):
+	make -C $(dir $(DEP_LIBFT))
 
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -61,12 +66,14 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
 
 clean:
+	make clean -C $(dir $(DEP_LIBFT))
 	@rm -rf $(OBJS)
 	@printf "\033[31;1m[Remove *.o]\033[32;0m\n"
 	@rm -rf $(OBJ_DIR)
 	@printf "\033[31;1m[Remove $(OBJ_DIR)]\033[32;0m\n"
 
 fclean: clean
+	make fclean -C $(dir $(DEP_LIBFT))
 	@rm -f $(NAME)
 	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
 
