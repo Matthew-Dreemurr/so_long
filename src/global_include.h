@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:24:27 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/01 12:25:56 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/01 16:32:20 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@
 /* ----==  [ DEFINE ] ==---- */
 
 # define EXIT_MSG_FAIL "Error\n"
+# define ERR_BAD_BER_FILE_NAME "This is not a valid File name\nNeed: <file_name>.ber"
 
 #endif
