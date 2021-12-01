@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/01 11:13:37 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/01 17:35:38 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ NAME = so_long
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror $(INCLUDES)
 INCLUDES = -I includes/
+
+GIT_PWD = $(shell pwd)
 
 D = 0
 SANI = 0
@@ -58,8 +60,7 @@ $(DEP_LIBFT):
 
 # wtf !? i don't understand why is work but it's work
 $(DEP_INCLUDE_DIR)%.h: %.h
-	@echo "$(HEADER_DEP)"
-	cp -v $< $@
+	ln -s $(GIT_PWD)/$< $@
 
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -74,7 +75,7 @@ $(DEP_INCLUDE_DIR):
 	@printf "\033[32;1m[Create $(DEP_INCLUDE_DIR)]\033[32;0m\n"
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(DEP_LIBFT) -o $(NAME)
 	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
 	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi

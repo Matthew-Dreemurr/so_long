@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/01 12:32:31 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:12:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	read_map(char const *map, t_data *data)
 	(void)data;
 	check_ext = ft_strnstr(map, ".ber", NAME_MAX + 1);
 	if (!check_ext)
-		exit_prog(EXIT_FAILURE, ERR_BAD_BER_FILE_NAME);
+		exit_prog(EXIT_FAILURE, ERR_BAD_FILE_NAME);
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
 		exit_prog(EXIT_FAILURE, strerror(errno));

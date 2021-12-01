@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:22:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/01 12:33:40 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:25:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 # include "global_include.h"
 # include "libft.h"
 
-void	exit_prog(int ret, char const *msg);
+void	exit_prog(int ret, char *msg);
 
 #endif
