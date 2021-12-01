@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   global_include.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/01 12:11:51 by mahadad          ###   ########.fr       */
+/*   Created: 2021/12/01 12:24:27 by mahadad           #+#    #+#             */
+/*   Updated: 2021/12/01 12:25:56 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-
-/* ----==  [ includes ] ==---- */
+#ifndef GLOBAL_INCLUDE_H
+# define GLOBAL_INCLUDE_H
 
 /* free, malloc, exit */
 # include <stdlib.h>
@@ -24,13 +22,17 @@
 /* close, read, write */
 # include <unistd.h>
 
-/* printf, perror, strerror */
+/* printf, perror */
 # include <stdio.h>
+
+/* errno, strerror */
+# include <errno.h>
+# include <string.h>
 
 # include <stddef.h>
 
-# include "struct.h"
+/* ----==  [ DEFINE ] ==---- */
 
-void	exit_prog(int ret, char const msg);
+# define EXIT_MSG_FAIL "Error\n"
 
 #endif

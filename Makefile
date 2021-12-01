@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/01 10:02:00 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/01 11:13:37 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,36 +34,44 @@ endif
 
 SRC_DIR = src/
 OBJ_DIR = obj_$(NAME)/
-INCLUDE_DIR = includes/
+DEP_INCLUDE_DIR = includes/
 DEP_LIBFT = libft/libft.a
 
-HEADER = $(shell find includes src -type f -name "*.h")
-HEADER_DEP = $(addprefix $(INCLUDE_DIR), $(notdir $(HEADER)))
+HEADER = $(shell find src -type f -name "*.h")
+HEADER += libft/includes/libft.h
+HEADER_DEP = $(addprefix $(DEP_INCLUDE_DIR), $(notdir $(HEADER)))
 SRCS = $(shell find $(SRC_DIR) -type f -name "*.c")
 
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
 
-VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
+VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes $(shell find $(SRC_DIR) -type d)
 
-all: $(DEP_LIBFT) $(HEADER_DEP) $(NAME)
+# _.-=+=-._.-=+=-._[ Rules ]_.-=+=-._.-=+=-._ #
+.PHONY: all, clean, fclean, re
+
+all: $(DEP_LIBFT) $(DEP_INCLUDE_DIR) $(HEADER_DEP) $(NAME)
 
 $(DEP_LIBFT):
 	make -C $(dir $(DEP_LIBFT))
 
 # wtf !? i don't understand why is work but it's work
-$(INCLUDE_DIR)%.h: %.h
-	@cp -v $< $@
+$(DEP_INCLUDE_DIR)%.h: %.h
+	@echo "$(HEADER_DEP)"
+	cp -v $< $@
 
-# magic happen, i don't no if is becose 
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\033[32;1m$@\033[32;0m\n"
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 	@printf "\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
+
+$(DEP_INCLUDE_DIR):
+	@mkdir -p $(DEP_INCLUDE_DIR)
+	@printf "\033[32;1m[Create $(DEP_INCLUDE_DIR)]\033[32;0m\n"
 
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
@@ -75,7 +83,7 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 clean:
 	make clean -C $(dir $(DEP_LIBFT))
 	rm -rf $(HEADER_DEP)
-	@printf "\033[31;1m[Remove $(INCLUDE_DIR).*h]\033[32;0m\n"
+	@printf "\033[31;1m[Remove $(DEP_INCLUDE_DIR).*h]\033[32;0m\n"
 	@rm -rf $(OBJS)
 	@printf "\033[31;1m[Remove *.o]\033[32;0m\n"
 	@rm -rf $(OBJ_DIR)
@@ -87,8 +95,6 @@ fclean: clean
 	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
 
 re: fclean all
-
-.PHONY: all, clean, fclean, re
 
 # _.-=+=-._.-=+=-._[ Dev Tools ]_.-=+=-._.-=+=-._ #
 .PHONY: c, cf, r, git, h

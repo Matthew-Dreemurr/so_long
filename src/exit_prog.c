@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   exit_prog.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/01 12:11:51 by mahadad          ###   ########.fr       */
+/*   Created: 2021/12/01 12:22:16 by mahadad           #+#    #+#             */
+/*   Updated: 2021/12/01 12:34:12 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "exit_prog.h"
 
-/* ----==  [ includes ] ==---- */
-
-/* free, malloc, exit */
-# include <stdlib.h>
-
-/* open */
-# include <fcntl.h>
-
-/* close, read, write */
-# include <unistd.h>
-
-/* printf, perror, strerror */
-# include <stdio.h>
-
-# include <stddef.h>
-
-# include "struct.h"
-
-void	exit_prog(int ret, char const msg);
-
-#endif
+void	exit_prog(int ret, char const *msg)
+{
+	ft_putstr(EXIT_MSG_FAIL);
+	if (msg)
+		ft_putstr(msg);
+	exit (ret);
+}
