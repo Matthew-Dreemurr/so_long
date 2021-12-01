@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/30 16:09:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/01 09:58:37 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 
 /* --== [ prototypes ] ==--- */
 
+/**
+ * @brief 
+ * 
+ */
 typedef struct s_vec
 {
 	long	x;
 	long	y;
 }t_vec;
 
+/**
+ * @brief 
+ * 
+ */
 typedef struct s_player
 {
 	t_vec	coord;
@@ -28,6 +36,10 @@ typedef struct s_player
 	size_t	n_move;
 }t_player;
 
+/**
+ * @brief 
+ * 
+ */
 typedef struct s_map
 {
 	char	**grid;
@@ -35,6 +47,10 @@ typedef struct s_map
 	size_t	n_item;
 }t_map;
 
+/**
+ * @brief 
+ * 
+ */
 typedef struct s_data
 {
 	t_player	plyr;

@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/01 09:56:00 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/01 10:02:00 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,6 @@ OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
 VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
 
 all: $(DEP_LIBFT) $(HEADER_DEP) $(NAME)
-	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
-	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
-	@printf "[Compiled /w this flag $(CFLAGS)]"
 
 $(DEP_LIBFT):
 	make -C $(dir $(DEP_LIBFT))
@@ -71,6 +68,9 @@ $(OBJ_DIR):
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
+	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
+	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
+	@printf "[Compiled /w this flag $(CFLAGS)]"
 
 clean:
 	make clean -C $(dir $(DEP_LIBFT))
