@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/01 17:31:07 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:02:18 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@
 
 # include <stddef.h>
 
-# include "struct.h"
+# include "global_include.h"
+
+# include "data_struct.h"
 
 # include "game_init.h"
 
-void	exit_prog(int ret, char *msg);
+# include "exit_prog.h"
 
 #endif

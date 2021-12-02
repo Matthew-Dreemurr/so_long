@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   data_struct.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 14:47:25 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:01:20 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#ifndef DATA_STRUCT_H
+# define DATA_STRUCT_H
+
+# include "global_include.h"
 
 /* --== [ prototypes ] ==--- */
 

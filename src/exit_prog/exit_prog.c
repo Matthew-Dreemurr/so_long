@@ -6,12 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:22:16 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 14:43:30 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:06:38 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "exit_prog.h"
-#include "libft.h"
 
 void	exit_prog(int ret, char *msg/* , t_data *data */)
 {

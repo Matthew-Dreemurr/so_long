@@ -6,12 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 14:51:08 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 14:58:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_init.h"
-#include "vector.h"
 
 /**
  * @brief 
@@ -33,7 +32,6 @@ static void	read_map(int fd, t_data *data)
 		if (read_ret)
 			vect_cat(&vect, tmp);
 	}
-	printf("%s", vect.buff);
 }
 
 /**
