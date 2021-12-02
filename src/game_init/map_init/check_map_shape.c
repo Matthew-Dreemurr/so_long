@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_init.c                                        :+:      :+:    :+:   */
+/*   check_map_shape.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 17:12:45 by mahadad          ###   ########.fr       */
+/*   Created: 2021/12/02 17:12:28 by mahadad           #+#    #+#             */
+/*   Updated: 2021/12/02 17:12:38 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_init.h"
+#include "map_init.h"
 
-/**
- * @brief define all pointer to `NULL` to check later if is allocated and
- *         will be free if (<ptr>)
- * 
- * @param data 
- */
-static void	struct_init(t_data *data)
+static size_t	line_len(char *str)
 {
-	data->map.grid = NULL;
+	char	*start;
+
+	start = str;
+	while (str && *str && *str != '\n')
+		str++;
+	return (str - start);
 }
 
-/**
- * @brief 
- * 
- * @param map 
- * @param data 
- */
-void	game_init(char const *map_file, t_data *data)
+void	check_map_shape(t_data *data)
 {
-	struct_init(data);
-	open_map(map_file, data);
-	check_map(data);
+	size_t	len;
+	char	*buff;
+
+	buff = data->vect.buff;
+	len = line_len(buff);
+	while (*buff)
+	{
+		if (len != line_len(buff))
+			exit_prog(EXIT_FAILURE, EMAP_RECT);
+		buff += (size_t []){(len + 1), len}[!*(buff + len)];
+	}
 }
