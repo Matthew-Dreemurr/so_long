@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:44:43 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 15:48:45 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 17:09:20 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_init.h"
+#include "map_init.h"
 
 /**
  * @brief 
@@ -31,7 +31,7 @@ static void	read_map(int fd, t_data *data)
 		if (read_ret)
 			vect_cat(&data->vect, tmp);
 	}
-	printf(YEL"MAP:\n%s"CRESET, data->vect.buff);
+	printf(YEL"MAP:\n%s"CRESET"\n", data->vect.buff);//XXX DEBUG
 }
 
 /**

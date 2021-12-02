@@ -20,5 +20,6 @@
 # define ERR_BAD_FILE_NAME "Not a valid File name\n  Need: <file_name>.ber"
 # define EVECT_INIT "Vector buffer init Alloc() fail\n"
 # define ETOO_MUCH_ARG "Too much arguments\n   usage: ./so_long <map>.ber\n"
+# define EMAP_RECT "The map is not rectangular"
 
 #endif
