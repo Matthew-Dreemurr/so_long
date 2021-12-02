@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:43:13 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 17:14:52 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 21:07:49 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	check_map(t_data *data)
 {
 	check_map_shape(data);
-	
+	// check_map_wall();
+	// check_map_player_and_items();
 }
