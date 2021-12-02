@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/02 13:40:25 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/02 14:50:13 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,29 +34,34 @@ endif
 
 # _.-=+=-._.-=+=-._[ Source & Bin ]_.-=+=-._.-=+=-._ #
 
-SRC_DIR = src/
-OBJ_DIR = obj_$(NAME)/
-DEP_INCLUDE_DIR = includes/
-DEP_LIBFT = libft/libft.a
+SRC_DIR		= src/
+OBJ_DIR		= obj_$(NAME)/
+DEP_LIBFT	= libft/libft.a
+DEP_VECT	= vector-buffer/vector_buffer.a
 
-HEADER = $(shell find src -type f -name "*.h")
-HEADER += libft/includes/libft.h
-HEADER_DEP = $(addprefix $(DEP_INCLUDE_DIR), $(notdir $(HEADER)))
-SRCS = $(shell find $(SRC_DIR) -type f -name "*.c")
+DEP_INCLUDE_DIR	= includes/
+HEADER			= $(shell find src -type f -name "*.h")
+HEADER			+= libft/includes/libft.h
+HEADER			+= vector-buffer/includes/vector.h
+HEADER_DEP		= $(addprefix $(DEP_INCLUDE_DIR), $(notdir $(HEADER)))
 
+SRCS	= $(shell find $(SRC_DIR) -type f -name "*.c")
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
 
-VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes $(shell find $(SRC_DIR) -type d)
+VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes  vector-buffer/includes $(shell find $(SRC_DIR) -type d)
 
 # _.-=+=-._.-=+=-._[ Rules ]_.-=+=-._.-=+=-._ #
 .PHONY: all, clean, fclean, re
 
-all: $(DEP_LIBFT) $(DEP_INCLUDE_DIR) $(HEADER_DEP) $(NAME)
+all: $(DEP_LIBFT) $(DEP_VECT) $(DEP_INCLUDE_DIR) $(HEADER_DEP) $(NAME)
 
 $(DEP_LIBFT):
 	make -C $(dir $(DEP_LIBFT))
+
+$(DEP_VECT):
+	make -C $(dir $(DEP_VECT))
 
 # wtf !? i don't understand why is work but it's work
 $(DEP_INCLUDE_DIR)%.h: %.h
@@ -75,14 +80,14 @@ $(DEP_INCLUDE_DIR):
 	@printf "\033[32;1m[Create $(DEP_INCLUDE_DIR)]\033[32;0m\n"
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(DEP_LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(DEP_LIBFT) $(DEP_VECT) -o $(NAME)
 	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
 	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 	@printf "[Compiled /w this flag $(CFLAGS)]"
 
 clean:
-	make clean -C $(dir $(DEP_LIBFT))
+	make clean -C $(dir $(DEP_VECT))
 	rm -rf $(HEADER_DEP)
 	@printf "\033[31;1m[Remove $(DEP_INCLUDE_DIR).*h]\033[32;0m\n"
 	@rm -rf $(OBJS)
@@ -91,7 +96,7 @@ clean:
 	@printf "\033[31;1m[Remove $(OBJ_DIR)]\033[32;0m\n"
 
 fclean: clean
-	make fclean -C $(dir $(DEP_LIBFT))
+	make fclean -C $(dir $(DEP_VECT))
 	@rm -f $(NAME)
 	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
 

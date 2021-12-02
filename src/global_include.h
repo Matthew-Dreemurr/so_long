@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:24:27 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/01 17:18:18 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 14:43:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 /* ----==  [ DEFINE ] ==---- */
 
 # define EXIT_MSG_FAIL "Error\n"
-# define ERR_BAD_FILE_NAME "This is not a valid File name\nNeed: <file_name>.ber"
+# define ERR_BAD_FILE_NAME "This is not a valid File name\n  Need: <file_name>.ber"
+# define EVECT_INIT "Vector buffer init Alloc() fail\n"
 
 #endif
