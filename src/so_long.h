@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 15:02:18 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:11:35 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 # include <stddef.h>
 
-# include "global_include.h"
+# include "error_msg.h"
 
 # include "data_struct.h"
 

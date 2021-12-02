@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/02 14:50:13 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/02 15:21:54 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,14 +58,14 @@ VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes  vector-buffer/includes $(shell fin
 all: $(DEP_LIBFT) $(DEP_VECT) $(DEP_INCLUDE_DIR) $(HEADER_DEP) $(NAME)
 
 $(DEP_LIBFT):
-	make -C $(dir $(DEP_LIBFT))
+	@make -C $(dir $(DEP_LIBFT))
 
 $(DEP_VECT):
-	make -C $(dir $(DEP_VECT))
+	@make -C $(dir $(DEP_VECT))
 
 # wtf !? i don't understand why is work but it's work
 $(DEP_INCLUDE_DIR)%.h: %.h
-	ln -s $(GIT_PWD)/$< $@
+	@ln -s $(GIT_PWD)/$< $@
 
 $(OBJ_DIR)%.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -87,8 +87,8 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 	@printf "[Compiled /w this flag $(CFLAGS)]"
 
 clean:
-	make clean -C $(dir $(DEP_VECT))
-	rm -rf $(HEADER_DEP)
+	@make clean -C $(dir $(DEP_VECT))
+	@rm -rf $(HEADER_DEP)
 	@printf "\033[31;1m[Remove $(DEP_INCLUDE_DIR).*h]\033[32;0m\n"
 	@rm -rf $(OBJS)
 	@printf "\033[31;1m[Remove *.o]\033[32;0m\n"
@@ -96,7 +96,7 @@ clean:
 	@printf "\033[31;1m[Remove $(OBJ_DIR)]\033[32;0m\n"
 
 fclean: clean
-	make fclean -C $(dir $(DEP_VECT))
+	@make fclean -C $(dir $(DEP_VECT))
 	@rm -f $(NAME)
 	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
 
