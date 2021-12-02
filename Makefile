@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/01 17:35:38 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/02 13:40:25 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ $(DEP_LIBFT):
 $(DEP_INCLUDE_DIR)%.h: %.h
 	ln -s $(GIT_PWD)/$< $@
 
-$(OBJ_DIR)%.o: %.c
+$(OBJ_DIR)%.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\033[32;1m$@\033[32;0m\n"
 
