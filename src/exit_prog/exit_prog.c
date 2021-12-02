@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:22:16 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 15:06:38 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:41:25 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	exit_prog(int ret, char *msg/* , t_data *data */)
 		free_data();
 	*/
 	if (ret == EXIT_FAILURE)
-		ft_putstr(EXIT_MSG_FAIL);
+		ft_putstr(RED EXIT_MSG_FAIL CRESET);
 	if (msg)
 		printf("  %s\n", msg);
 	exit (ret);

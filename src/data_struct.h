@@ -6,14 +6,14 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 15:15:43 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:30:56 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_STRUCT_H
 # define DATA_STRUCT_H
 
-/* --== [ prototypes ] ==--- */
+# include "vector.h"
 
 /**
  * @brief 
@@ -55,6 +55,7 @@ typedef struct s_data
 {
 	t_player	plyr;
 	t_map		map;
+	t_vector	vect;
 }t_data;
 
 #endif

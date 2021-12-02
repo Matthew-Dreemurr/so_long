@@ -15,9 +15,10 @@
 
 # include <stdlib.h>
 # include <errno.h>
-
+# include "color.h"
 # define EXIT_MSG_FAIL "Error\n"
 # define ERR_BAD_FILE_NAME "Not a valid File name\n  Need: <file_name>.ber"
 # define EVECT_INIT "Vector buffer init Alloc() fail\n"
+# define ETOO_MUCH_ARG "Too much arguments\n   usage: ./so_long <map>.ber\n"
 
 #endif
