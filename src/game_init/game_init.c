@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 17:12:45 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/03 21:03:06 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 static void	struct_init(t_data *data)
 {
 	data->map.grid = NULL;
+	data->map.size.x = 0;
+	data->map.size.y = 0;
 }
 
 /**

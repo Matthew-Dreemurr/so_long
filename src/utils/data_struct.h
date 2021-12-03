@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 15:30:56 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/03 22:26:27 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
  */
 typedef struct s_coord
 {
-	long	x;
-	long	y;
+	size_t	x;
+	size_t	y;
 }t_coord;
 
 /**
@@ -43,7 +43,7 @@ typedef struct s_player
 typedef struct s_map
 {
 	char	**grid;
-	t_coord	item;
+	t_coord	size;
 	size_t	n_item;
 }t_map;
 

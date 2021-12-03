@@ -21,6 +21,7 @@
 # define EVECT_INIT "Vector buffer init Alloc() fail\n"
 # define ETOO_MUCH_ARG "Too much arguments\n   usage: ./so_long <map>.ber\n"
 # define ENO_ARG "Need arguments\n   usage: ./so_long <map>.ber\n"
-# define EMAP_RECT "The map is not rectangular"
+# define EMAP_RECT "The map is not rectangular or empty line"
+# define EMAP_BAD_CHAR "The map must be composed with only 0,1,C,E,P,\\n\n"
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:12:28 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 17:12:38 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/03 21:06:38 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ static size_t	line_len(char *str)
 	return (str - start);
 }
 
+/**
+ * @brief Check if each line are the same length.
+ */
 void	check_map_shape(t_data *data)
 {
 	size_t	len;
@@ -33,6 +36,8 @@ void	check_map_shape(t_data *data)
 	{
 		if (len != line_len(buff))
 			exit_prog(EXIT_FAILURE, EMAP_RECT);
+		data->map.size.y++;
 		buff += (size_t []){(len + 1), len}[!*(buff + len)];
 	}
+	data->map.size.x = len;
 }

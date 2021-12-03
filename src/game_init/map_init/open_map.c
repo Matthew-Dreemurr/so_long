@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:44:43 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 17:09:20 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/03 20:13:50 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static void	read_map(int fd, t_data *data)
 	char		tmp[READ_SIZE + 1];
 	size_t		read_ret;
 
-	(void) data;
 	if (!vect_init(&data->vect))
 		exit_prog(EXIT_FAILURE, EVECT_INIT);
 	read_ret = READ_SIZE;
@@ -42,7 +41,6 @@ void	open_map(char const *map_file, t_data *data)
 	int		fd;
 	char	*check_ext;
 
-	(void)data;
 	check_ext = ft_strstr(map_file, ".ber");
 	if (!check_ext)
 		exit_prog(EXIT_FAILURE, ERR_BAD_FILE_NAME);
