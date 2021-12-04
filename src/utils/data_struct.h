@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/03 22:26:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/04 23:02:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ typedef struct s_player
 	size_t	n_move;
 }t_player;
 
+typedef struct s_items
+{
+	int	player;
+	int	collectible;
+	int	exit;
+}t_items;
+
 /**
  * @brief 
  * 
@@ -44,7 +51,7 @@ typedef struct s_map
 {
 	char	**grid;
 	t_coord	size;
-	size_t	n_item;
+	t_items	items;
 }t_map;
 
 /**
