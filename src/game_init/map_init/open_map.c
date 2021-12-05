@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:44:43 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/03 20:13:50 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/05 15:11:58 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	read_map(int fd, t_data *data)
 		if (read_ret)
 			vect_cat(&data->vect, tmp);
 	}
-	printf(YEL"MAP:\n%s"CRESET"\n", data->vect.buff);//XXX DEBUG
+	printf(Y"MAP:\n%s"CR"\n", data->vect.buff);//XXX DEBUG
 }
 
 /**

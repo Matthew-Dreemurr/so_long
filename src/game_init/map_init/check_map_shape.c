@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:12:28 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/03 21:06:38 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/05 14:16:02 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ void	check_map_shape(t_data *data)
 		buff += (size_t []){(len + 1), len}[!*(buff + len)];
 	}
 	data->map.size.x = len;
+	printf("size x: %lu, y: %lu\n", data->map.size.x, data->map.size.y);//XXX
 }

@@ -6,11 +6,35 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:42:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/05 00:25:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/05 15:13:57 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_init.h"
+
+static void	check_items_prerequisite(t_data *data)
+{
+	int	error;
+
+	error = 0;
+	if (data->map.items.collectible < 1)
+	{
+		printf(Y"%s\n"CR, EMAP_PREQ_COLL);
+		error++;
+	}
+	if (data->map.items.exit < 1)
+	{
+		printf(Y"%s\n"CR, EMAP_PREQ_EXIT);
+		error++;
+	}
+	if (data->map.items.player != 1)
+	{
+		printf(Y"%s\n"CR, EMAP_PREQ_PLAYER);
+		error++;
+	}
+	if (error)
+		exit_prog(EXIT_FAILURE, "Please fix the map\n");
+}
 
 /**
  * @brief 
@@ -37,11 +61,14 @@ void	check_map_charcater(t_data *data)
 	while (*str)
 	{
 		index = charsetchar(*str, "01CEP\n");
-		printf("\ncharset[%d]\n", index);
 		if (index == -1)
 			exit_prog(EXIT_FAILURE, EMAP_BAD_CHAR);
 		count_items(data, index);
 		str++;
 	}
-	printf("%d\n%d\n%d\n", data->map.items.collectible, data->map.items.exit, data->map.items.player);
+	printf("Collectible: [%d]\nExit:        [%d]\nPlayer:      [%d]\n",
+			data->map.items.collectible,
+			data->map.items.exit,
+			data->map.items.player);
+	check_items_prerequisite(data);
 }

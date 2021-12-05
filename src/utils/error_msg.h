@@ -23,5 +23,9 @@
 # define ENO_ARG "Need arguments\n   usage: ./so_long <map>.ber\n"
 # define EMAP_RECT "The map is not rectangular or empty line"
 # define EMAP_BAD_CHAR "The map must be composed with only 0,1,C,E,P,\\n\n"
+# define EMAP_PREQ_COLL "Need at least one collectible `C`\n"
+# define EMAP_PREQ_EXIT "Need at least one exit `E`\n"
+# define EMAP_PREQ_PLAYER "Need at least/only one player `P`\n"
+# define EMAP_BORDER "The map border is not close\n"
 
 #endif
