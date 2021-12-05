@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:22:26 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/05 16:55:06 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/05 22:37:30 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	check_map_border(t_data *data)
 	size_t	index;
 
 	index = 0;
-	max = data->map.size.x * data->map.size.y;
+	max = (data->map.size.x * data->map.size.y) - data->map.size.x; //TODO check the full last line
 	map_first_last(data);
 	map = data->vect.buff;
 	while (index < max)
@@ -54,8 +54,8 @@ void	check_map_border(t_data *data)
 		if (!map[index])
 			break ;
 		if (map[index] != '1')
-			exit_prog(EXIT_FAILURE, "test");
+			exit_prog(EXIT_FAILURE, "err 0");
 		if (map[index + data->map.size.x - 1] != '1')
-			exit_prog(EXIT_FAILURE, "test");
+			exit_prog(EXIT_FAILURE, "err last");
 	}
 }
