@@ -6,13 +6,13 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:22:26 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 15:35:34 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 16:49:42 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_init.h"
 
-static void	check_edge_line(char *line, size_t x_axis_size)
+static int	check_edge_line(char *line, size_t x_axis_size)
 {
 	size_t	i;
 
@@ -20,10 +20,11 @@ static void	check_edge_line(char *line, size_t x_axis_size)
 	while (*line && i < x_axis_size)
 	{
 		if (*line != '1')
-			exit_prog(EXIT_FAILURE, "EMAP_BORDER 0", );
+			return (0);
 		line++;
 		i++;
 	}
+	return (1);
 }
 
 /**
@@ -52,10 +53,11 @@ void	check_map_border(t_data *data)
 		if (!map[index])
 			break ;
 		if (map[index] != '1')
-			exit_prog(EXIT_FAILURE, "EMAP_BORDER 1");
+			exit_prog(EXIT_FAILURE, "EMAP_BORDER 1", data);
 		if (map[index + data->map.size.x - 1] != '1')
-			exit_prog(EXIT_FAILURE, "EMAP_BORDER 2");
+			exit_prog(EXIT_FAILURE, "EMAP_BORDER 2", data);
 		index += data->map.size.x + 1;
 	}
-	check_edge_line(&map[index], data->map.size.x);
+	if (!check_edge_line(&map[index], data->map.size.x))
+		exit_prog(EXIT_FAILURE, "EMAP_BORDER 3", data);
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 14:33:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 15:11:43 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 16:51:56 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	alloc_grid(t_data *data)
 {
 	data->map.grid = malloc(sizeof(char **) * data->map.size.y);
 	if (!data->map.grid)
-		exit_prog(EXIT_FAILURE, "malloc err\n");
+		exit_prog(EXIT_FAILURE, "malloc err\n", data);
 }
 
 void	map_to_grid(t_data *data)

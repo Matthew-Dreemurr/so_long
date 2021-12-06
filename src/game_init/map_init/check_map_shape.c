@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:12:28 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/05 14:16:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 16:51:47 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	check_map_shape(t_data *data)
 	while (*buff)
 	{
 		if (len != line_len(buff))
-			exit_prog(EXIT_FAILURE, EMAP_RECT);
+			exit_prog(EXIT_FAILURE, EMAP_RECT, data);
 		data->map.size.y++;
 		buff += (size_t []){(len + 1), len}[!*(buff + len)];
 	}

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:42:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/05 15:13:57 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 16:51:32 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	check_items_prerequisite(t_data *data)
 		error++;
 	}
 	if (error)
-		exit_prog(EXIT_FAILURE, "Please fix the map\n");
+		exit_prog(EXIT_FAILURE, "Please fix the map\n", data);
 }
 
 /**
@@ -62,7 +62,7 @@ void	check_map_charcater(t_data *data)
 	{
 		index = charsetchar(*str, "01CEP\n");
 		if (index == -1)
-			exit_prog(EXIT_FAILURE, EMAP_BAD_CHAR);
+			exit_prog(EXIT_FAILURE, EMAP_BAD_CHAR, data);
 		count_items(data, index);
 		str++;
 	}

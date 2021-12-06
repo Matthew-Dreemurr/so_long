@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 15:34:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 17:05:10 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	main(int ac, char **av)
 	//XXX DEBUG TO REMOVE
 	setbuf(stdout, NULL);
 	game_init(av[1], &data);
-	exit_prog(EXIT_SUCCESS, "UwU");
+	exit_prog(EXIT_SUCCESS, "UwU", &data);
 	return (EXIT_SUCCESS);
 }
