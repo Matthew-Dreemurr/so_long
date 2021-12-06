@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/02 15:25:19 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/06 17:28:28 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,13 @@ GIT_PWD = $(shell pwd)
 
 D = 0
 SANI = 0
+RWA = 0
+
+ifeq ($(WRA), 1)
+WRA = 0
+DEP_INCLUDE_DIR += includes/debug
+INCLUDES += -I includes/debug
+endif
 
 ifeq ($(SANI), 1)
 CFLAGS += -fsanitize=address
@@ -58,10 +65,10 @@ VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes  vector-buffer/includes $(shell fin
 all: $(DEP_LIBFT) $(DEP_VECT) $(DEP_INCLUDE_DIR) $(HEADER_DEP) $(NAME)
 
 $(DEP_LIBFT):
-	make SANI=$(SANI) -C $(dir $(DEP_LIBFT))
+	make SANI=$(SANI) WRA=$(WRA) -C $(dir $(DEP_LIBFT))
 
 $(DEP_VECT):
-	make SANI=$(SANI) -C $(dir $(DEP_VECT))
+	make SANI=$(SANI) WRA=$(WRA) -C $(dir $(DEP_VECT))
 
 # wtf !? i don't understand why is work but it's work
 $(DEP_INCLUDE_DIR)%.h: %.h

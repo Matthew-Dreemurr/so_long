@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:22:16 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 17:02:20 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 17:27:03 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,13 @@ void	exit_prog(int ret, char *msg, t_data *data)
 	if (data)
 		free_data();
 	*/
-	if (data->map.grid)
-		free(data->map.grid);
+	if (!data)
+	{
+		ft_putstr("ERROR T_DATA *DATA NULL PTR!?!!");
+		exit(EXIT_FAILURE);
+	}
+	// if (data->map.grid)
+		// free(data->map.grid);
 	if (ret == EXIT_FAILURE)
 		ft_putstr(R EXIT_MSG_FAIL CR);
 	if (msg)
