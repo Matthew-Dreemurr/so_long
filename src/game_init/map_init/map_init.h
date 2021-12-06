@@ -6,14 +6,14 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:06:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/03 19:57:24 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 14:00:24 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_INIT_H
 # define MAP_INIT_H
 
-# define READ_SIZE 256
+# define READ_SIZE 1024
 
 # include <stdlib.h>
 
