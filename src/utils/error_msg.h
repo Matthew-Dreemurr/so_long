@@ -26,6 +26,6 @@
 # define EMAP_PREQ_COLL "Need at least one collectible `C`\n"
 # define EMAP_PREQ_EXIT "Need at least one exit `E`\n"
 # define EMAP_PREQ_PLAYER "Need at least/only one player `P`\n"
-# define EMAP_BORDER "The map border is not close\n"
+# define EMAP_BORDER "The edges of the map are not closed\n"
 
 #endif

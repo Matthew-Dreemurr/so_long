@@ -6,24 +6,22 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:22:26 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/05 22:37:30 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 13:51:25 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_init.h"
 
-static void	map_first_last(t_data *data)
+static void	check_edge_line(char *line, size_t x_axis_size)
 {
 	size_t	i;
-	char	*str;
 
 	i = 0;
-	str = data->vect.buff;
-	while (*str && i < data->map.size.x)
+	while (*line && i < x_axis_size)
 	{
-		if (*str != '1')
-			exit_prog(EXIT_FAILURE, EMAP_BORDER);
-		str++;
+		if (*line != '1')
+			exit_prog(EXIT_FAILURE, "EMAP_BORDER 0");
+		line++;
 		i++;
 	}
 }
@@ -45,17 +43,19 @@ void	check_map_border(t_data *data)
 	size_t	index;
 
 	index = 0;
-	max = (data->map.size.x * data->map.size.y) - data->map.size.x; //TODO check the full last line
-	map_first_last(data);
+	max = (data->map.size.x * data->map.size.y) - data->map.size.x;
 	map = data->vect.buff;
+	check_edge_line(map, data->map.size.x);
+	index = data->map.size.x + 1;
 	while (index < max)
 	{
-		index += data->map.size.x + 1;
 		if (!map[index])
 			break ;
 		if (map[index] != '1')
-			exit_prog(EXIT_FAILURE, "err 0");
+			exit_prog(EXIT_FAILURE, "EMAP_BORDER 1");
 		if (map[index + data->map.size.x - 1] != '1')
-			exit_prog(EXIT_FAILURE, "err last");
+			exit_prog(EXIT_FAILURE, "EMAP_BORDER 2");
+		index += data->map.size.x + 1;
 	}
+	check_edge_line(&map[index], data->map.size.x);
 }
