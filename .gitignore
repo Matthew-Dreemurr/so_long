@@ -52,7 +52,7 @@ Mkfile.old
 dkms.conf
 .vscode/settings.json
 .vscode
+!includes/debug/*.h
 includes/
 includes/*
 so_long
-!includes/debug/*.h
