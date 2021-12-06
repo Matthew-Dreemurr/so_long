@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 17:03:15 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/06 18:19:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	game_init(char const *map_file, t_data *data)
 	struct_init(data);
 	open_map(map_file, data);
 	check_map(data);
+	map_to_grid(data);
 }

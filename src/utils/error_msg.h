@@ -13,6 +13,10 @@
 #ifndef ERROR_MSG_H
 # define ERROR_MSG_H
 
+#ifdef WRA
+# include "wraloc.h"
+#endif
+
 # include <stdlib.h>
 # include <errno.h>
 # include "color.h"

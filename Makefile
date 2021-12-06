@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/06 17:28:28 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/06 18:13:42 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ RWA = 0
 
 ifeq ($(WRA), 1)
 WRA = 0
-DEP_INCLUDE_DIR += includes/debug
 INCLUDES += -I includes/debug
+CFLAGS += -D WRA
 endif
 
 ifeq ($(SANI), 1)
