@@ -2,6 +2,10 @@
 
 This project is a very small 2D game. It is built to make you work with textures, sprites. And some very basic gameplay elements.
 
+## TODO 
+
+Refaire la fonction exit_prog, ajouter t_data pour pouvoir free.
+
 ## Why does the code look weird ?
 
 The 42 curriculum asks us to code according to the `Norme`, this standard forbids us certain control structures (like `do while`, `for`, ...), a limit of 25 lines and 5 variables per function, 5 function max per `.c` and and other constraints.
