@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 16:29:16 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 22:36:57 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static void find_player(t_data *data)
 		{
 			if (map[y][x] == 'P')
 			{
-				data->plyr.coord.x = x;
-				data->plyr.coord.y = y;
+				data->plyr.x = x;
+				data->plyr.y = y;
 				break ;
 			}
 			x++;
@@ -53,6 +53,10 @@ static void	struct_init(t_data *data)
 	data->map.items.collectible = 0;
 	data->map.items.exit = 0;
 	data->map.items.player = 0;
+	data->plyr.col_item = 0;
+	data->plyr.n_move = 0;
+	data->plyr.y = 0;
+	data->plyr.x = 0;
 }
 
 /**
@@ -68,5 +72,5 @@ void	game_init(char const *map_file, t_data *data)
 	check_map(data);
 	map_to_grid(data);
 	find_player(data);
-	printf("PLAYER COOR :[%lu][%lu]\n", data->plyr.coord.y, data->plyr.coord.x);
+	printf("PLAYER COOR :[%lu][%lu]\n", data->plyr.y, data->plyr.x);
 }

@@ -6,69 +6,117 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:34:58 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 16:51:50 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 22:33:47 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl_run_game.h"
 
-void	key_w(t_data *data)
+int	char_0(t_data *data)
 {
-	(void)data;
-	printf("%s\n", __FUNCTION__);
-	//TODO fast check, need to remade the key_*();, give as param (data, data.plyr.coord, data.map.grid)
-	if ((data->plyr.coord.y - 1) > 0)
-	{
-		if (data->map.grid[data->plyr.coord.y - 1][data->plyr.coord.x] == '0')
-		{
-			data->map.grid[data->plyr.coord.y--][data->plyr.coord.x] = '0';
-			data->map.grid[data->plyr.coord.y][data->plyr.coord.x] = 'P';
-		}
-	}
+	printf("[%s]\n", __FUNCTION__);
 	data->plyr.n_move++;
+	return (1);
 }
 
-void	key_s(t_data *data)
+int	char_1(t_data *data)
 {
-	if ((data->plyr.coord.y + 1) <= data->map.size.y)
-	{
-		if (data->map.grid[data->plyr.coord.y + 1][data->plyr.coord.x] == '0')
-		{
-			data->map.grid[data->plyr.coord.y++][data->plyr.coord.x] = '0';
-			data->map.grid[data->plyr.coord.y][data->plyr.coord.x] = 'P';
-		}
-	}
+	printf("[%s]\n", __FUNCTION__);
 	(void)data;
-	printf("%s\n", __FUNCTION__);
-	data->plyr.n_move++;
+	return (0);
 }
 
-void	key_a(t_data *data)
+int	char_c(t_data *data)
 {
-	(void)data;
-	if ((data->plyr.coord.x - 1) > 0)
-	{
-		if (data->map.grid[data->plyr.coord.y][data->plyr.coord.x - 1] == '0')
-		{
-			data->map.grid[data->plyr.coord.y][data->plyr.coord.x--] = '0';
-			data->map.grid[data->plyr.coord.y][data->plyr.coord.x] = 'P';
-		}
-	}
-	printf("%s\n", __FUNCTION__);
+	printf("[%s]\n", __FUNCTION__);
 	data->plyr.n_move++;
+	data->plyr.col_item++;
+	return (1);
 }
 
-void	key_d(t_data *data)
+int	char_e(t_data *data)
 {
-	(void)data;
-	if ((data->plyr.coord.x + 1) <= data->map.size.x)
-	{
-		if (data->map.grid[data->plyr.coord.y][data->plyr.coord.x + 1] == '0')
-		{
-			data->map.grid[data->plyr.coord.y][data->plyr.coord.x++] = '0';
-			data->map.grid[data->plyr.coord.y][data->plyr.coord.x] = 'P';
-		}
-	}
-	printf("%s\n", __FUNCTION__);
+	printf("[%s]\n", __FUNCTION__);
 	data->plyr.n_move++;
+	//todo check exit
+	exit_prog(EXIT_SUCCESS, "CHECK THE COLLECTIBE!!\n", data);
+	return (1);
+}
+
+int	char_err(t_data *data)
+{
+	printf("[%s]\n", __FUNCTION__);
+	(void)data;
+	return (0);
+}
+
+int check_next_move(char	c, t_data *data)
+{
+	int		index;
+	static t_key_bind_func f[MOVE_NB] = {char_0, char_1, char_c, char_e,
+		char_err};
+
+	index = charsetchar(c, "01CE");
+	if (index < 0)
+		index = MOVE_NB - 1;
+	return (f[index](data));
+}
+
+/**
+ * @brief check if the move can be done and check if we need to store some data
+ * 
+ * @param y_move 
+ * @param x_move 
+ */
+void	player_move(t_data *data, int y_move, int x_move)
+{
+	ssize_t	y;
+	ssize_t	x;
+
+	printf(Y"DEBUG [%s]\n"CR, __FUNCTION__);
+	printf(Y"y[%d], x[%d]\n"CR, y_move, x_move);
+	if (x_move < -1 || y_move < -1 || x_move > 1 || y_move > 1)
+		return ;
+	y = data->plyr.y + y_move;
+	x = data->plyr.x + x_move;
+	if (y < 0 || y > data->map.size.y || x < 0 || x > data->map.size.x)
+		return ;
+	printf("Actual pos:[%lu][%lu]\n", data->plyr.y, data->plyr.x);
+	printf("Next   pos:[%lu][%lu]\n", y, x);
+	if (check_next_move(data->map.grid[y][x], data))
+	{
+		printf(BLU"MOVE OK [%s]\n"CR, __FUNCTION__);
+		data->map.grid[y][x] = 'P';
+		data->map.grid[data->plyr.y][data->plyr.x] = '0';
+		data->plyr.y = y;
+		data->plyr.x = x;
+	}
+}
+
+int	key_w(t_data *data)
+{
+	printf("[%s]\n", __FUNCTION__);
+	player_move(data, -1, 0);
+	return (1);
+}
+
+int	key_s(t_data *data)
+{
+	printf("[%s]\n", __FUNCTION__);
+	player_move(data, 1, 0);
+	return (1);
+}
+
+int	key_a(t_data *data)
+{
+	printf("[%s]\n", __FUNCTION__);
+	player_move(data, 0, -1);
+	return (1);
+}
+
+int	key_d(t_data *data)
+{
+	printf("[%s]\n", __FUNCTION__);
+	player_move(data, 0, 1);
+	return (1);
 }

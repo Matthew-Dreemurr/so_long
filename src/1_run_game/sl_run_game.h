@@ -25,13 +25,15 @@
 # define KEY_A 0
 # define KEY_D 2
 
-typedef void	(*t_key_bind_func)(t_data *data);
+# define MOVE_NB 5
+
+typedef int	(*t_key_bind_func)(t_data *data);
 
 void	sl_run_game(t_data *data);
 
-void	key_w(t_data *data);
-void	key_s(t_data *data);
-void	key_a(t_data *data);
-void	key_d(t_data *data);
+int		key_w(t_data *data);
+int		key_s(t_data *data);
+int		key_a(t_data *data);
+int		key_d(t_data *data);
 
 #endif

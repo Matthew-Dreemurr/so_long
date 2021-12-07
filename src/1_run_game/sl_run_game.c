@@ -35,10 +35,20 @@ int	key_hook(int keycode, t_data *data)
 			f[index](data);
 		index++;
 	}
-	// printf("[%d]\n", keycode);
-	//TODO make a map_print and print all without `0` char
-	for (ssize_t i = 0; i < (data->map.size.y + 1); i++)
-		printf("[%3lu]:%s\n", i, data->map.grid[i]);
+	printf("[%d]\n", keycode);
+	printf("Item: [%lu]\n", data->plyr.col_item);
+	printf("Move: [%lu]\n", data->plyr.n_move);
+	for (ssize_t i = 0; i < (data->map.size.y); i++)
+	{
+		printf("\n");
+		for (ssize_t y = 0; y < (data->map.size.x + 1); y++)
+			if (data->map.grid[i][y] == '0')
+			{
+				printf(" ");
+			}
+			else
+				printf("%c", data->map.grid[i][y]);
+	}
 	return (0);
 }
 
