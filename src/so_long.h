@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 15:13:10 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 15:22:53 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 
 # include "sl_exit_prog.h"
 
-# include "sl_start_game.h"
+# include "sl_run_game.h"
 
 # include "mlx.h"
 

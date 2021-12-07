@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_start_game.h                                    :+:      :+:    :+:   */
+/*   sl_run_game.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,13 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SL_START_GAME_H
-# define SL_START_GAME_H
+#ifndef SL_RUN_GAME_H
+# define SL_RUN_GAME_H
 
 # include "sl_data_struct.h"
 # include "sl_error_msg.h"
 # include "sl_exit_prog.h"
+#include "mlx.h"
 
-void	sl_start_game(t_data *data);
+# define KEYBIND_NB 4
+# define KEYBIND_NB_FUNC 4
+
+# define KEY_W 13
+# define KEY_S 1
+# define KEY_A 0
+# define KEY_D 2
+
+typedef void	(*t_key_bind_func)(t_data *data);
+
+void	sl_run_game(t_data *data);
+
+void	key_w(t_data *data);
+void	key_s(t_data *data);
+void	key_a(t_data *data);
+void	key_d(t_data *data);
 
 #endif
