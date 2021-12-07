@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_init.h                                         :+:      :+:    :+:   */
+/*   sl_map_init.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:06:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 18:19:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:23:33 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_INIT_H
-# define MAP_INIT_H
+#ifndef SL_MAP_INIT_H
+# define SL_MAP_INIT_H
 
 # define READ_SIZE 1024
 
@@ -25,10 +25,10 @@
 
 # include <stddef.h>
 
-# include "exit_prog.h"
+# include "sl_exit_prog.h"
 # include "vector.h"
-# include "data_struct.h"
-# include "error_msg.h"
+# include "sl_data_struct.h"
+# include "sl_error_msg.h"
 
 void	open_map(char const *map_file, t_data *data);
 void	check_map(t_data *data);

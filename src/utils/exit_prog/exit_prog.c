@@ -6,16 +6,23 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:22:16 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 11:44:28 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:22:58 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "exit_prog.h"
-#include "data_struct.h"
+#include "sl_exit_prog.h"
+#include "sl_data_struct.h"
 
 static void	free_map_grid(t_data *data)
 {
-	//TODO free sting in the array 
+	char	**map;
+
+	map = data->map.grid;
+	while (*map)
+	{
+		free(*map);
+		map++;
+	}
 	free(data->map.grid);
 }
 

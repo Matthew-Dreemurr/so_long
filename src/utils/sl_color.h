@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   sl_color.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:36:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/05 15:04:08 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:20:13 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#ifndef SL_COLOR_H
+# define SL_COLOR_H
 
 /*
  * This is free and unencumbered software released into the public domain.

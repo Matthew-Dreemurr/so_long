@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   sl_exit_prog.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 14:30:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 15:13:10 by mahadad          ###   ########.fr       */
+/*   Created: 2021/12/01 12:22:48 by mahadad           #+#    #+#             */
+/*   Updated: 2021/12/07 14:23:33 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SL_EXIT_PROG_H
+# define SL_EXIT_PROG_H
 
-/* ----==  [ includes ] ==---- */
-
-/* free, malloc, exit */
-# include <stdlib.h>
-
-/* open */
-# include <fcntl.h>
-
-/* close, read, write */
-# include <unistd.h>
-
-/* printf, perror, strerror */
 # include <stdio.h>
 
-# include <stddef.h>
-
 # include "sl_error_msg.h"
-
 # include "sl_data_struct.h"
+# include "libft.h"
 
-# include "sl_game_init.h"
-
-# include "sl_exit_prog.h"
-
-# include "sl_start_game.h"
-
-# include "mlx.h"
+void	exit_prog(int ret, char *msg, t_data *data);
 
 #endif

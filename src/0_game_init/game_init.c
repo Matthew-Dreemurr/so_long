@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 18:19:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:22:49 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_init.h"
+#include "sl_game_init.h"
 
 /**
  * @brief define all pointer to `NULL` to check later if is allocated and

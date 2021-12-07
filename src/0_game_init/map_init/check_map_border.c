@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:22:26 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 11:32:28 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:23:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_init.h"
+#include "sl_map_init.h"
 
 static int	check_edge_line(char *line, size_t x_axis_size)
 {

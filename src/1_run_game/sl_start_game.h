@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_init.h                                        :+:      :+:    :+:   */
+/*   sl_start_game.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 16:36:33 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/02 17:08:56 by mahadad          ###   ########.fr       */
+/*   Created: 2021/12/07 14:57:48 by mahadad           #+#    #+#             */
+/*   Updated: 2021/12/07 15:05:33 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_INIT_H
-# define GAME_INIT_H
+#ifndef SL_START_GAME_H
+# define SL_START_GAME_H
 
-# include "map_init.h"
+# include "sl_data_struct.h"
+# include "sl_error_msg.h"
+# include "sl_exit_prog.h"
 
-void	game_init(char const *map, t_data *data_file);
+void	sl_start_game(t_data *data);
 
 #endif

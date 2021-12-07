@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:12:28 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 16:51:47 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:23:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_init.h"
+#include "sl_map_init.h"
 
 static size_t	line_len(char *str)
 {

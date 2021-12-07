@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 14:33:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 12:17:21 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:23:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_init.h"
+#include "sl_map_init.h"
 
 /**
  * put data.vec.buff -> data.map.grid
@@ -19,23 +19,37 @@
 
 static void	alloc_grid(t_data *data)
 {
-	size_t	size;
+	ssize_t	size;
 
-	size = data->map.size.y + 1;
-	data->map.grid = malloc(sizeof(char *) * size);
+	size = data->map.size.y;
+	data->map.grid = malloc(sizeof(char *) * (size + 1));
 	if (!data->map.grid)
 		exit_prog(EXIT_FAILURE, "malloc err\n", data);
-	//TODO test how to init all ptr to NULL
-	while (--size)
-	{
-		data->map.grid[size] = NULL;
-	}
+	while (size >= 0)
+		data->map.grid[size--] = NULL;
 }
 
 static void	map_mem_move(t_data *data)
 {
-	ft_substr(data->vect.buff, );
+	size_t	index;
+	char	**grid;
+	char	*map;
 
+	grid = data->map.grid;
+	map = data->vect.buff;
+	index = 0;
+	while (index < data->map.size.y)
+	{
+		*grid = ft_substr(map, 0, data->map.size.x);
+		if (!*grid)
+			exit_prog(EXIT_FAILURE, "substr Fail !\n", data);
+		map += data->map.size.x + 1;
+		grid++;
+		index++;
+	}
+	//TODO remove debug
+	for (size_t i = 0; i < (data->map.size.y + 1); i++)
+		printf("[%lu]:%s\n", i, data->map.grid[i]);
 }
 
 void	map_to_grid(t_data *data)

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_struct.h                                      :+:      :+:    :+:   */
+/*   sl_data_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/04 23:02:16 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:39:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_STRUCT_H
-# define DATA_STRUCT_H
+#ifndef SL_DATA_STRUCT_H
+# define SL_DATA_STRUCT_H
 
 # include "vector.h"
 
@@ -63,6 +63,8 @@ typedef struct s_data
 	t_player	plyr;
 	t_map		map;
 	t_vector	vect;
+	void	*mlx;
+	void	*win;
 }t_data;
 
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msg.h                                   :+:      :+:    :+:   */
+/*   sl_error_msg.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_MSG_H
-# define ERROR_MSG_H
+#ifndef SL_ERROR_MSG_H
+# define SL_ERROR_MSG_H
 
 #ifdef WRA
 # include "wraloc.h"
@@ -19,7 +19,7 @@
 
 # include <stdlib.h>
 # include <errno.h>
-# include "color.h"
+# include "sl_color.h"
 # define EXIT_MSG_FAIL "Error\n"
 # define ERR_BAD_FILE_NAME "Invalid File name\n    Need: <file_name>.ber"
 # define EVECT_INIT "Vector buffer init Alloc() fail\n"

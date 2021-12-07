@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:42:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/06 16:51:32 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 14:23:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_init.h"
+#include "sl_map_init.h"
 
 static void	check_items_prerequisite(t_data *data)
 {

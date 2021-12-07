@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/06 18:13:42 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/07 14:37:09 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ GIT_PWD = $(shell pwd)
 
 D = 0
 SANI = 0
-RWA = 0
+WRA = 0
 
 ifeq ($(WRA), 1)
 WRA = 0
@@ -45,11 +45,13 @@ SRC_DIR		= src/
 OBJ_DIR		= obj_$(NAME)/
 DEP_LIBFT	= libft/libft.a
 DEP_VECT	= vector-buffer/vector_buffer.a
+DEP_LIBMLX	= minilibx/libmlx.a 
 
 DEP_INCLUDE_DIR	= includes/
 HEADER			= $(shell find src -type f -name "*.h")
 HEADER			+= libft/includes/libft.h
 HEADER			+= vector-buffer/includes/vector.h
+HEADER			+= $(shell find $(dir $(DEP_LIBMLX)) -type f -name "*.h")
 HEADER_DEP		= $(addprefix $(DEP_INCLUDE_DIR), $(notdir $(HEADER)))
 
 SRCS	= $(shell find $(SRC_DIR) -type f -name "*.c")
@@ -57,7 +59,7 @@ SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
 
-VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes  vector-buffer/includes $(shell find $(SRC_DIR) -type d)
+VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes vector-buffer/includes  $(dir $(DEP_LIBMLX)) $(shell find $(SRC_DIR) -type d)
 
 # _.-=+=-._.-=+=-._[ Rules ]_.-=+=-._.-=+=-._ #
 .PHONY: all, clean, fclean, re
@@ -87,7 +89,7 @@ $(DEP_INCLUDE_DIR):
 	@printf "\033[32;1m[Create $(DEP_INCLUDE_DIR)]\033[32;0m\n"
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(DEP_LIBFT) $(DEP_VECT) -o $(NAME)
+	$(CC) $(CFLAGS) -framework OpenGL -framework AppKit $(OBJS) $(DEP_LIBFT) $(DEP_VECT) $(DEP_LIBMLX) -o $(NAME)
 	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
 	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 	@if [ $D = "1" ]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
