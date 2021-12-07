@@ -16,10 +16,9 @@
 # include "sl_data_struct.h"
 # include "sl_error_msg.h"
 # include "sl_exit_prog.h"
-#include "mlx.h"
+# include "mlx.h"
 
 # define KEYBIND_NB 4
-# define KEYBIND_NB_FUNC 4
 
 # define KEY_W 13
 # define KEY_S 1

@@ -25,18 +25,27 @@
 int	key_hook(int keycode, t_data *data)
 {
 	static int				key[KEYBIND_NB] = {KEY_W, KEY_S, KEY_A, KEY_D};
-	static t_key_bind_func	f[KEYBIND_NB_FUNC] = {key_w, key_s, key_a, key_s};
+	static t_key_bind_func	f[KEYBIND_NB] = {key_w, key_s, key_a, key_d};
+	int						index;
 
-	(void)key;
-	f[2](data);
-	printf("[%d]\n", keycode);
+	index = 0;
+	while (index < KEYBIND_NB)
+	{
+		if (keycode == key[index])
+			f[index](data);
+		index++;
+	}
+	// printf("[%d]\n", keycode);
+	//TODO remove
+	for (size_t i = 0; i < (data->map.size.y + 1); i++)
+		printf("[%lu]:%s\n", i, data->map.grid[i]);
 	return (0);
 }
 
 void	sl_run_game(t_data *data)
 {
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, 1, 1, "WIP!");
+	data->win = mlx_new_window(data->mlx, 250, 250, "WIP!");
 	mlx_key_hook(data->win, key_hook, data);
-	mlx_loop(data->mlx);
+	printf("MLX_LOOP = %d\n", mlx_loop(data->mlx));
 }
