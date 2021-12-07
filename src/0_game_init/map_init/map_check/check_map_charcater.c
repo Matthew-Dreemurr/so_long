@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:42:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 14:23:16 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 16:16:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ static void	check_items_prerequisite(t_data *data)
  */
 static void	count_items(t_data *data, int index)
 {
-	if (index == 2)
+	if (index == WORDL_COLLEC)
 		data->map.items.collectible++;
-	else if (index == 3)
+	else if (index == WORDL_EXIT)
 		data->map.items.exit++;
-	else if (index == 4)
+	else if (index == WORDL_PLAYER)
 		data->map.items.player++;
 }
 

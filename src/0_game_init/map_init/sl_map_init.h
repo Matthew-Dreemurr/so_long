@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:06:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 14:23:33 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 16:15:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@
 # include "vector.h"
 # include "sl_data_struct.h"
 # include "sl_error_msg.h"
+
+# define WORDL_VOID    0
+# define WORDL_WALL    1
+# define WORDL_COLLEC  2
+# define WORDL_EXIT    3
+# define WORDL_PLAYER  4
 
 void	open_map(char const *map_file, t_data *data);
 void	check_map(t_data *data);
