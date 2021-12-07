@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 14:33:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 14:23:16 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 16:38:37 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	alloc_grid(t_data *data)
 
 static void	map_mem_move(t_data *data)
 {
-	size_t	index;
+	ssize_t	index;
 	char	**grid;
 	char	*map;
 
@@ -48,7 +48,7 @@ static void	map_mem_move(t_data *data)
 		index++;
 	}
 	//TODO remove debug
-	for (size_t i = 0; i < (data->map.size.y + 1); i++)
+	for (ssize_t i = 0; i < (data->map.size.y + 1); i++)
 		printf("[%lu]:%s\n", i, data->map.grid[i]);
 }
 

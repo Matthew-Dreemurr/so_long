@@ -36,9 +36,9 @@ int	key_hook(int keycode, t_data *data)
 		index++;
 	}
 	// printf("[%d]\n", keycode);
-	//TODO remove
-	for (size_t i = 0; i < (data->map.size.y + 1); i++)
-		printf("[%lu]:%s\n", i, data->map.grid[i]);
+	//TODO make a map_print and print all without `0` char
+	for (ssize_t i = 0; i < (data->map.size.y + 1); i++)
+		printf("[%3lu]:%s\n", i, data->map.grid[i]);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 14:39:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/07 16:40:12 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define SL_DATA_STRUCT_H
 
 # include "vector.h"
+# include <stddef.h>
+# include <sys/types.h>
 
 /**
  * @brief 
@@ -21,8 +23,8 @@
  */
 typedef struct s_coord
 {
-	size_t	x;
-	size_t	y;
+	ssize_t	x;
+	ssize_t	y;
 }t_coord;
 
 /**
