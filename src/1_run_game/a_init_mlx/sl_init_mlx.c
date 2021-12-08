@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:58:38 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 14:50:29 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 14:53:03 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ void	sl_mlx_init(t_data *data)
 {
 	sl_init_texture(data);
 	sl_mlx_window_init(data);
+	//XXX HERE!
 }
