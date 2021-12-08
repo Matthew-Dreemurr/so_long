@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 21:38:03 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 10:57:05 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ typedef struct s_player
 
 typedef struct s_items
 {
-	int	player;
-	int	collectible;
-	int	exit;
+	size_t	player;
+	size_t	collectible;
+	size_t	exit;
 }t_items;
 
 /**
@@ -57,6 +57,15 @@ typedef struct s_map
 	t_items	items;
 }t_map;
 
+typedef struct s_asset
+{
+	void	*img;
+	void	*add;
+	int		bpp;
+	int		slen;
+	int		endian;
+}t_asset;
+
 /**
  * @brief 
  * 
@@ -66,8 +75,9 @@ typedef struct s_data
 	t_player	plyr;
 	t_map		map;
 	t_vector	vect;
-	void	*mlx;
-	void	*win;
+	void		*mlx;
+	void		*win;
+	t_asset		test_asset;
 }t_data;
 
 #endif

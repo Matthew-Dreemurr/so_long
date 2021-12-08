@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:42:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 16:16:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 10:40:28 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	check_map_charcater(t_data *data)
 		count_items(data, index);
 		str++;
 	}
-	printf("Collectible: [%d]\nExit:        [%d]\nPlayer:      [%d]\n",
+	printf("Collectible: [%lu]\nExit:        [%lu]\nPlayer:      [%lu]\n",
 			data->map.items.collectible,
 			data->map.items.exit,
 			data->map.items.player);

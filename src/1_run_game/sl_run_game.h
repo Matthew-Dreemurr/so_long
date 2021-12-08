@@ -30,10 +30,17 @@
 typedef int	(*t_key_bind_func)(t_data *data);
 
 void	sl_run_game(t_data *data);
+void	player_move(t_data *data, int y_move, int x_move);
 
 int		key_w(t_data *data);
 int		key_s(t_data *data);
 int		key_a(t_data *data);
 int		key_d(t_data *data);
+
+int		char_0(t_data *data);
+int		char_1(t_data *data);
+int		char_c(t_data *data);
+int		char_e(t_data *data);
+int		char_err(t_data *data);
 
 #endif
