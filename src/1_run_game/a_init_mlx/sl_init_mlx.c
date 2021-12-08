@@ -62,6 +62,7 @@ void	sl_mlx_init(t_data *data)
 	sl_mlx_window_init(data);
 	sl_init_texture(data);
 	sl_print_all_strict(data, '0');
+	//XXX LAST WIP
 	// sl_print_ground(data);
 	// sl_print_wall(data);
 }

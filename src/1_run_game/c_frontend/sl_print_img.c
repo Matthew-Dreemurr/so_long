@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 15:57:55 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 16:59:14 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 17:00:31 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,6 @@ void	sl_print_img(t_data *data, int asset_index, int y, int x)
 	printf(CYN"print asset_index[%d]\n"CR, asset_index);
 	mlx_put_image_to_window(data->mlx, data->win, data->asset[asset_index].img,
 		x * PSIZE, y * PSIZE);
-}
-
-void	sl_print_ground(t_data *data)
-{
-	int	y;
-	int	x;
-
-	y = data->map.size.y;
-	x = data->map.size.x;
-	while (--y > -1)
-	{
-		while (--x > -1)
-		{
-			sl_print_img(data, AGROUND, y, x);
-		}
-		x = data->map.size.x;
-	}
 }
 
 /**
@@ -51,10 +34,10 @@ void	sl_print_all_strict(t_data *data, char c)
 	x = data->map.size.x;
 	while (--y > -1)
 	{
-		printf("Y: [%d]\n", y);
+		printf("Y: [%d]\n", y);//XXX debug
 		while (--x > -1)
 		{
-			printf("X: [%d]\n", x);
+			printf("X: [%d]\n", x);//XXX debug
 			if (map[y][x] == c)
 				sl_print_img(data, AGROUND, y, x);
 		}
