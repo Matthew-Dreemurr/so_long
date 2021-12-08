@@ -35,6 +35,7 @@
 # define EMAP_BORDER "The edges of the map are not closed\n"
 
 # define EMLX_INIT "mlx_init fail!\n"
-# define EMLX_WIN "mlx_new_window!\n"
+# define EMLX_WIN "mlx_new_window fail!\n"
+# define EMLX_XMP_TO_IMG "mlx_xpm_file_to_image fail!\n"
 
 #endif

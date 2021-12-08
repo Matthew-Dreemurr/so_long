@@ -18,6 +18,8 @@
 # include "mlx.h"
 # include "sl_data_struct.h"
 
+# include "sl_mlx.h"
+
 # define KEYBIND_NB 5
 
 # define KEY_W 13

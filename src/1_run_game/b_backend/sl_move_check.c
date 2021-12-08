@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:31:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 10:36:13 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 16:41:19 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@ static int	check_next_move(char c, t_data *data)
 }
 
 /**
+ * @brief print the player in the next position and a ground in
+ *        the old player position.
+ */
+static void	apply_move(t_data *data, int y, int x)
+{
+	data->map.grid[y][x] = 'P';
+	sl_print_img(data, APLAYER, y, x);
+	data->map.grid[data->plyr.y][data->plyr.x] = '0';
+	sl_print_img(data, AGROUND, data->plyr.y, data->plyr.x);
+	data->plyr.y = y;
+	data->plyr.x = x;
+}
+
+/**
  * @brief check if the move can be done and check if we need to store some data
  * 
  * @param y_move 
@@ -32,25 +46,15 @@ static int	check_next_move(char c, t_data *data)
  */
 void	player_move(t_data *data, int y_move, int x_move)
 {
-	ssize_t	y;
-	ssize_t	x;
+	int	y;
+	int	x;
 
-	printf(Y"DEBUG [%s]\n"CR, __FUNCTION__);//DEBUG
-	printf(Y"y[%d], x[%d]\n"CR, y_move, x_move);//DEBUG
 	if (x_move < -1 || y_move < -1 || x_move > 1 || y_move > 1)
 		return ;
 	y = data->plyr.y + y_move;
 	x = data->plyr.x + x_move;
 	if (y < 0 || y > data->map.size.y || x < 0 || x > data->map.size.x)
 		return ;
-	printf("Actual pos:[%lu][%lu]\n", data->plyr.y, data->plyr.x);//DEBUG
-	printf("Next   pos:[%lu][%lu]\n", y, x);//DEBUG
 	if (check_next_move(data->map.grid[y][x], data))
-	{
-		printf(BLU"MOVE OK [%s]\n"CR, __FUNCTION__);//DEBUG
-		data->map.grid[y][x] = 'P';
-		data->map.grid[data->plyr.y][data->plyr.x] = '0';
-		data->plyr.y = y;
-		data->plyr.x = x;
-	}
+		apply_move(data, y, x);
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 14:18:18 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 16:02:17 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_coord
  */
 typedef struct s_player
 {
-	ssize_t	y;
-	ssize_t x;
+	int	y;
+	int x;
 	size_t	col_item;
 	size_t	n_move;
 }t_player;

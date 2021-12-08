@@ -6,13 +6,19 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 14:41:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 16:57:08 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl_game_init.h"
 
-static void find_player(t_data *data)
+/**
+ * @brief find player position and store in `data.plyr.(x\y)
+ * 
+ * @param data 
+ */
+//TODO move to a othre file !
+static void	find_player(t_data *data)
 {
 	size_t	x;
 	size_t	y;
@@ -74,9 +80,10 @@ static void	struct_init(t_data *data)
 void	game_init(char const *map_file, t_data *data)
 {
 	struct_init(data);
+	//TODO free vect when we dont need anymore
 	open_map(map_file, data);
 	check_map(data);
 	map_to_grid(data);
 	find_player(data);
-	printf("PLAYER COOR :[%lu][%lu]\n", data->plyr.y, data->plyr.x);
+	printf("PLAYER COOR :[%d][%d]\n", data->plyr.y, data->plyr.x);
 }
