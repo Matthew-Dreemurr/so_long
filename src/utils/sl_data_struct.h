@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 12:05:58 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 14:18:18 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "vector.h"
 # include <stddef.h>
 # include <sys/types.h>
+
+# define ASSET_NB 5
 
 /**
  * @brief 
@@ -76,8 +78,7 @@ typedef struct s_data
 	t_vector	vect;
 	void		*mlx;
 	void		*win;
-	t_asset		test_asset;
-	t_asset		test_asset2;
+	t_asset		asset[ASSET_NB];
 }t_data;
 
 #endif

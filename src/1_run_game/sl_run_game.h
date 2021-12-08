@@ -13,17 +13,18 @@
 #ifndef SL_RUN_GAME_H
 # define SL_RUN_GAME_H
 
-# include "sl_data_struct.h"
 # include "sl_error_msg.h"
 # include "sl_exit_prog.h"
 # include "mlx.h"
+# include "sl_data_struct.h"
 
-# define KEYBIND_NB 4
+# define KEYBIND_NB 5
 
 # define KEY_W 13
 # define KEY_S 1
 # define KEY_A 0
 # define KEY_D 2
+# define KEY_ESC 53
 
 # define MOVE_NB 5
 
@@ -42,5 +43,6 @@ int		char_1(t_data *data);
 int		char_c(t_data *data);
 int		char_e(t_data *data);
 int		char_err(t_data *data);
+int		key_esc(t_data *data);
 
 #endif

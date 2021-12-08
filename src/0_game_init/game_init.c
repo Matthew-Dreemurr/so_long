@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 22:36:57 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 14:41:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ static void find_player(t_data *data)
  * 
  * @param data 
  */
+//TODO TODO TODO move function to his own file/folder
+//TODO check if satic struct init by default all var to `0` or `NULL`.
+//TODO Need to free the image with mlx_destroy_image()
+//TODO init all data.asset[ASSET_NB]
 static void	struct_init(t_data *data)
 {
 	data->vect.buff = NULL;
@@ -57,6 +61,8 @@ static void	struct_init(t_data *data)
 	data->plyr.n_move = 0;
 	data->plyr.y = 0;
 	data->plyr.x = 0;
+	data->win = NULL;
+	data->mlx = NULL;
 }
 
 /**
