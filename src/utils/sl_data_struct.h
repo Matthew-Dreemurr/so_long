@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 10:57:05 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/08 12:05:58 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,9 @@ typedef struct s_map
 typedef struct s_asset
 {
 	void	*img;
-	void	*add;
-	int		bpp;
-	int		slen;
-	int		endian;
+	char	*path;
+	int		x;
+	int		y;
 }t_asset;
 
 /**
@@ -78,6 +77,7 @@ typedef struct s_data
 	void		*mlx;
 	void		*win;
 	t_asset		test_asset;
+	t_asset		test_asset2;
 }t_data;
 
 #endif

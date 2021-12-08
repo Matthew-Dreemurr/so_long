@@ -55,7 +55,20 @@ int	key_hook(int keycode, t_data *data)
 		index++;
 	}
 	key_hook_debug(data, keycode);//DEBUG
+	mlx_put_image_to_window(data->mlx, data->win, data->test_asset.img, 0, 0);
+	mlx_put_image_to_window(data->mlx, data->win, data->test_asset2.img, data->plyr.y, data->plyr.x);
 	return (0);
+}
+
+void	test_mlx(t_data *data)
+{
+	data->test_asset.path = "./src/asset/Linus_THICC_Tips.xpm";
+	data->test_asset2.path = "./src/asset/30x30.xpm";
+	int	y = data->plyr.y * 10;
+	int	x = data->plyr.x * 10;
+	data->test_asset.img = mlx_xpm_file_to_image(data->mlx, data->test_asset.path, &x, &y);
+	data->test_asset2.img = mlx_xpm_file_to_image(data->mlx, data->test_asset2.path, &data->test_asset2.x, &data->test_asset2.y);
+	printf("Img data [%p]\n", data->test_asset.img);
 }
 
 void	sl_run_game(t_data *data)
@@ -63,7 +76,9 @@ void	sl_run_game(t_data *data)
 	data->mlx = mlx_init();
 	// data->test_asset.img = mlx_new_image(data->mlx, 1920, 1080);
 	// data->test_asset.add = mlx_get_data_addr(data->test_asset.img, &data->test_asset.bpp, &data->test_asset.slen, &data->test_asset.endian);
-	data->win = mlx_new_window(data->mlx, 1920, 1080, "WIP!");
+	data->win = mlx_new_window(data->mlx, 250, 250, "WIP!");
+	test_mlx(data);
 	mlx_key_hook(data->win, key_hook, data);
+	// mlx_hook()
 	printf("MLX_LOOP = %d\n", mlx_loop(data->mlx));//DEBUG
 }
