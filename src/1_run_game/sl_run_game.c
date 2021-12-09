@@ -65,5 +65,5 @@ void	sl_run_game(t_data *data)
 {
 	sl_mlx_init(data);
 	mlx_key_hook(data->win, key_hook, data);
-	printf("MLX_LOOP = %d\n", mlx_loop(data->mlx));//DEBUG
+	mlx_loop(data->mlx);
 }
