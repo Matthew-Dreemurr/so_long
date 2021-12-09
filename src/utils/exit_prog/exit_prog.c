@@ -6,12 +6,20 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:22:16 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 14:22:58 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/09 16:58:14 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl_exit_prog.h"
 #include "sl_data_struct.h"
+
+//TODO !!
+/**
+static void	free_mlx_image(t_data *t_data)
+{
+
+}
+**/
 
 static void	free_map_grid(t_data *data)
 {
@@ -28,10 +36,6 @@ static void	free_map_grid(t_data *data)
 
 void	exit_prog(int ret, char *msg, t_data *data)
 {
-	/* Free all allocation form t_data and t_vector
-	if (data)
-		free_data();
-	*/
 	if (!data)
 	{
 		ft_putstr("ERROR T_DATA *DATA NULL PTR!?!!");
