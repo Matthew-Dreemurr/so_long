@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:44:43 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 16:07:30 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/09 16:47:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ static void	read_map(int fd, t_data *data)
 		if (read_ret)
 			vect_cat(&data->vect, tmp);
 	}
-	ft_putstr(Y"MAP:\n\n");      //XXX DEBUG
-	ft_putstr(data->vect.buff);  //XXX DEBUG
-	ft_putstr(CR"\n");            //XXX DEBUG
 }
 
 /**

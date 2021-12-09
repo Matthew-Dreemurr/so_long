@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 16:57:08 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/09 16:49:08 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void	find_player(t_data *data)
  * @param data 
  */
 //TODO TODO TODO move function to his own file/folder
-//TODO check if satic struct init by default all var to `0` or `NULL`.
 //TODO Need to free the image with mlx_destroy_image()
 //TODO init all data.asset[ASSET_NB]
 static void	struct_init(t_data *data)
@@ -80,10 +79,8 @@ static void	struct_init(t_data *data)
 void	game_init(char const *map_file, t_data *data)
 {
 	struct_init(data);
-	//TODO free vect when we dont need anymore
 	open_map(map_file, data);
 	check_map(data);
 	map_to_grid(data);
 	find_player(data);
-	printf("PLAYER COOR :[%d][%d]\n", data->plyr.y, data->plyr.x);
 }

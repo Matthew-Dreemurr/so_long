@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:42:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 10:40:28 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/09 16:54:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,11 @@ static void	check_items_prerequisite(t_data *data)
 
 	error = 0;
 	if (data->map.items.collectible < 1)
-	{
-		printf(Y"%s\n"CR, EMAP_PREQ_COLL);
 		error++;
-	}
 	if (data->map.items.exit < 1)
-	{
-		printf(Y"%s\n"CR, EMAP_PREQ_EXIT);
 		error++;
-	}
 	if (data->map.items.player != 1)
-	{
-		printf(Y"%s\n"CR, EMAP_PREQ_PLAYER);
 		error++;
-	}
 	if (error)
 		exit_prog(EXIT_FAILURE, "Please fix the map\n", data);
 }
@@ -66,9 +57,5 @@ void	check_map_charcater(t_data *data)
 		count_items(data, index);
 		str++;
 	}
-	printf("Collectible: [%lu]\nExit:        [%lu]\nPlayer:      [%lu]\n",
-			data->map.items.collectible,
-			data->map.items.exit,
-			data->map.items.player);
 	check_items_prerequisite(data);
 }

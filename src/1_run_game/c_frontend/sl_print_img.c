@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 15:57:55 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 11:10:52 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/09 16:54:44 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	sl_print_img(t_data *data, int asset_index, int y, int x)
 {
-	printf(CYN"print asset_index[%d]\n"CR, asset_index);
 	mlx_put_image_to_window(data->mlx, data->win, data->asset[asset_index].img,
 		x * PSIZE, y * PSIZE);
 }
@@ -34,10 +33,8 @@ void	sl_print_all_strict(t_data *data, char c, int texture)
 	x = data->map.size.x;
 	while (--y > -1)
 	{
-		printf("Y: [%d]\n", y);//XXX debug
 		while (--x > -1)
 		{
-			printf("X: [%d]\n", x);//XXX debug
 			if (map[y][x] == c)
 				sl_print_img(data, texture, y, x);
 		}

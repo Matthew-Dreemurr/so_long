@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 14:33:03 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/07 16:38:37 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/09 16:47:12 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,6 @@ static void	map_mem_move(t_data *data)
 		grid++;
 		index++;
 	}
-	//TODO remove debug
-	for (ssize_t i = 0; i < (data->map.size.y + 1); i++)
-		printf("[%lu]:%s\n", i, data->map.grid[i]);
 }
 
 void	map_to_grid(t_data *data)

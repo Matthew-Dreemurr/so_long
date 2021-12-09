@@ -12,25 +12,6 @@
 
 #include "sl_run_game.h"
 
-static void	key_hook_debug(t_data *data ,int keycode)
-{
-	printf("[%d]\n", keycode);
-	printf("Item: [%lu]\n", data->plyr.col_item);
-	printf("Move: [%lu]\n", data->plyr.n_move);
-	for (ssize_t i = 0; i < (data->map.size.y); i++)
-	{
-		printf("\n");
-		for (ssize_t y = 0; y < (data->map.size.x + 1); y++)
-			if (data->map.grid[i][y] == '0')
-			{
-				printf(" ");
-			}
-			else
-				printf("%c", data->map.grid[i][y]);
-	}
-}
-
-
 /**
  * @brief
  * 
@@ -56,8 +37,6 @@ int	key_hook(int keycode, t_data *data)
 			f[index](data);
 		index++;
 	}
-	key_hook_debug(data, keycode);//DEBUG
-	//TODO start print /w dMXL
 	return (0);
 }
 
