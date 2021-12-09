@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/07 14:37:09 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/09 13:40:35 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,13 +64,16 @@ VPATH	= $(SRC_DIR) $(OBJ_DIR) libft/includes vector-buffer/includes  $(dir $(DEP
 # _.-=+=-._.-=+=-._[ Rules ]_.-=+=-._.-=+=-._ #
 .PHONY: all, clean, fclean, re
 
-all: $(DEP_LIBFT) $(DEP_VECT) $(DEP_INCLUDE_DIR) $(HEADER_DEP) $(NAME)
+all: $(DEP_LIBFT) $(DEP_VECT) $(DEP_LIBMLX) $(DEP_INCLUDE_DIR) $(HEADER_DEP) $(NAME)
 
 $(DEP_LIBFT):
 	make SANI=$(SANI) WRA=$(WRA) -C $(dir $(DEP_LIBFT))
 
 $(DEP_VECT):
 	make SANI=$(SANI) WRA=$(WRA) -C $(dir $(DEP_VECT))
+
+$(DEP_LIBMLX):
+	make SANI=$(SANI) -C $(dir $(DEP_LIBMLX))
 
 # wtf !? i don't understand why is work but it's work
 $(DEP_INCLUDE_DIR)%.h: %.h
@@ -97,6 +100,7 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 
 clean:
 	@make clean -C $(dir $(DEP_VECT))
+	@make clean -C $(dir $(DEP_LIBMLX))
 	@rm -rf $(HEADER_DEP)
 	@printf "\033[31;1m[Remove $(DEP_INCLUDE_DIR).*h]\033[32;0m\n"
 	@rm -rf $(OBJS)
