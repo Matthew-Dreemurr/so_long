@@ -41,7 +41,7 @@ static void	sl_init_texture(t_data *data)
 {
 	int			i;
 	static char	*asset[ASSET_NB] = {FILE_WALL, FILE_GROUND, FILE_COLL,
-		FILE_EXIT, FILE_PLAYER};
+		FILE_EXIT, FILE_PLAYER, FLOGO};
 
 	i = 0;
 	while (i < ASSET_NB)
@@ -61,8 +61,12 @@ void	sl_mlx_init(t_data *data)
 {
 	sl_mlx_window_init(data);
 	sl_init_texture(data);
-	sl_print_all_strict(data, '0');
-	//XXX LAST WIP
+	sl_print_all_strict(data, '0', AGROUND);
+	sl_print_all_strict(data, '1', AWALL);
+	sl_print_all_strict(data, 'C', ACOLL);
+	sl_print_all_strict(data, 'E', AEXIT);
+	sl_print_all_strict(data, 'P', APLAYER);
+	sl_print_img(data, ALOGO, 1, 1);
 	// sl_print_ground(data);
 	// sl_print_wall(data);
 }

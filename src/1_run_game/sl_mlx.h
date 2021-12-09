@@ -18,7 +18,7 @@
 # include "mlx.h"
 # include "sl_data_struct.h"
 
-# define PSIZE   50
+# define PSIZE   64
 
 # define WINDOW_NAME "So_long"
 
@@ -37,8 +37,11 @@
 # define APLAYER      4
 # define FILE_PLAYER  "./asset/player.xpm"
 
+# define ALOGO      5
+# define FLOGO  "./asset/logo.xpm"
+
 void	sl_mlx_init(t_data *data);
 void	sl_print_img(t_data *data, int asset_index, int y, int x);
-void	sl_print_all_strict(t_data *data, char c);
+void	sl_print_all_strict(t_data *data, char c, int texture);
 
 #endif

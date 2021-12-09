@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 15:57:55 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 17:00:31 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/09 11:10:52 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sl_print_img(t_data *data, int asset_index, int y, int x)
  * @brief print only a `c` char in `data.map.grid
  * @param c 
  */
-void	sl_print_all_strict(t_data *data, char c)
+void	sl_print_all_strict(t_data *data, char c, int texture)
 {
 	int		y;
 	int		x;
@@ -39,7 +39,7 @@ void	sl_print_all_strict(t_data *data, char c)
 		{
 			printf("X: [%d]\n", x);//XXX debug
 			if (map[y][x] == c)
-				sl_print_img(data, AGROUND, y, x);
+				sl_print_img(data, texture, y, x);
 		}
 		x = data->map.size.x;
 	}
