@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:44:43 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/10 12:05:35 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/10 12:50:06 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,31 @@ static void	read_map(int fd, t_data *data)
 	}
 }
 
+static int	check_ber_extension(char const *map_file)
+{
+	size_t	len;
+	size_t	len_extension;
+	char	*extesion;
+
+	extesion = ".ber";
+	len_extension = strlen_protect(extesion);
+	len = strlen_protect(map_file);
+	if (len <= len_extension)
+		return (0);
+	map_file += len - len_extension;
+	if (!ft_strstr(map_file, extesion))
+		return (0);
+	return (1);
+}
+
 /**
  * @brief check if the file is a .ber and open it
  */
 void	open_map(char const *map_file, t_data *data)
 {
 	int		fd;
-	char	*check_ext;
 
-	check_ext = ft_strstr(map_file, ".ber");//TODO WIP just check the last 4 char
-	if (*(check_ext + 4))
+	if (!check_ber_extension(map_file))
 		exit_prog(EXIT_FAILURE, ERR_BAD_FILE_NAME, data);
 	fd = open(map_file, O_RDONLY);
 	if (fd < 0)
