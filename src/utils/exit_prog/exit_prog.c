@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:22:16 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 16:58:14 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/10 11:30:42 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,13 @@ static void	free_map_grid(t_data *data)
 
 void	exit_prog(int ret, char *msg, t_data *data)
 {
-	if (!data)
+	if (data)
 	{
-		ft_putstr("ERROR T_DATA *DATA NULL PTR!?!!");
-		exit(EXIT_FAILURE);
+		if (data->map.grid)
+			free_map_grid(data);
+		if (data->vect.buff)
+			free(data->vect.buff);
 	}
-	if (data->map.grid)
-		free_map_grid(data);
-	if (data->vect.buff)
-		free(data->vect.buff);
 	if (ret == EXIT_FAILURE)
 		ft_putstr(R EXIT_MSG_FAIL CR);
 	if (msg)

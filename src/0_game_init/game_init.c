@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 16:49:08 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/10 11:39:04 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,32 +42,6 @@ static void	find_player(t_data *data)
 		x = 0;
 		y++;
 	}
-}
-
-/**
- * @brief define all pointer to `NULL` to check later if is allocated and
- *         will be free if (<ptr>)
- * 
- * @param data 
- */
-//TODO TODO TODO move function to his own file/folder
-//TODO Need to free the image with mlx_destroy_image()
-//TODO init all data.asset[ASSET_NB]
-static void	struct_init(t_data *data)
-{
-	data->vect.buff = NULL;
-	data->map.grid = NULL;
-	data->map.size.x = 0;
-	data->map.size.y = 0;
-	data->map.items.collectible = 0;
-	data->map.items.exit = 0;
-	data->map.items.player = 0;
-	data->plyr.col_item = 0;
-	data->plyr.n_move = 0;
-	data->plyr.y = 0;
-	data->plyr.x = 0;
-	data->win = NULL;
-	data->mlx = NULL;
 }
 
 /**

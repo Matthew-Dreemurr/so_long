@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:44:43 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 16:47:16 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/10 12:05:35 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	open_map(char const *map_file, t_data *data)
 	int		fd;
 	char	*check_ext;
 
-	check_ext = ft_strstr(map_file, ".ber");
-	if (!check_ext)
+	check_ext = ft_strstr(map_file, ".ber");//TODO WIP just check the last 4 char
+	if (*(check_ext + 4))
 		exit_prog(EXIT_FAILURE, ERR_BAD_FILE_NAME, data);
 	fd = open(map_file, O_RDONLY);
 	if (fd < 0)
