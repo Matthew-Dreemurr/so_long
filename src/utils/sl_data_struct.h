@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:57:08 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 11:43:54 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/20 13:06:33 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stddef.h>
 # include <sys/types.h>
 
-# define ASSET_NB 6
+# define ASSET_NB 5
 
 /**
  * @brief 

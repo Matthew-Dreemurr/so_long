@@ -12,7 +12,6 @@
 
 #include "sl_mlx.h"
 
-//TODO in exit_prog close windows and free mlx
 /**
  * @brief Init mlx and the windows.
  */
@@ -41,7 +40,7 @@ static void	sl_init_texture(t_data *data)
 {
 	int			i;
 	static char	*asset[ASSET_NB] = {FILE_WALL, FILE_GROUND, FILE_COLL,
-		FILE_EXIT, FILE_PLAYER, FLOGO};
+		FILE_EXIT, FILE_PLAYER};
 
 	i = 0;
 	while (i < ASSET_NB)
@@ -61,11 +60,9 @@ void	sl_mlx_init(t_data *data)
 {
 	sl_mlx_window_init(data);
 	sl_init_texture(data);
-	//TODO make a functin with a while to init
 	sl_print_all_strict(data, '0', AGROUND);
 	sl_print_all_strict(data, '1', AWALL);
 	sl_print_all_strict(data, 'C', ACOLL);
 	sl_print_all_strict(data, 'E', AEXIT);
 	sl_print_all_strict(data, 'P', APLAYER);
-	sl_print_img(data, ALOGO, 1, 1);
 }

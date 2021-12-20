@@ -22,6 +22,8 @@
 
 # define WINDOW_NAME "So_long"
 
+/* Edit ASSET_NB in `sl_data_struct.h` */
+
 # define AWALL        0
 # define FILE_WALL    "./asset/wall.xpm"
 
@@ -36,9 +38,6 @@
 
 # define APLAYER      4
 # define FILE_PLAYER  "./asset/player.xpm"
-
-# define ALOGO      5
-# define FLOGO  "./asset/logo.xpm"
 
 void	sl_mlx_init(t_data *data);
 void	sl_print_img(t_data *data, int asset_index, int y, int x);

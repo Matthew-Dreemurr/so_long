@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:31:46 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/10 11:38:59 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/20 13:38:46 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,29 @@ static void	init_mlx(t_data *data)
 	data->win = NULL;
 }
 
+static void	init_asset(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < ASSET_NB)
+	{
+		data->asset[i].img = NULL;
+		i++;
+	}
+}
+
 /**
  * @brief define all pointer to `NULL` to check later if is allocated and
  *         will be free if (<ptr>)
  * 
  * @param data 
  */
-//TODO TODO TODO move function to his own file/folder
-//TODO Need to free the image with mlx_destroy_image()
-//TODO init all data.asset[ASSET_NB]
 void	struct_init(t_data *data)
 {
 	data->vect.buff = NULL;
 	init_map(data);
 	init_mlx(data);
 	init_player(data);
+	init_asset(data);
 }

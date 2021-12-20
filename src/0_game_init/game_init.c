@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:39:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/10 11:39:04 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/20 12:45:59 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
  * 
  * @param data 
  */
-//TODO move to a othre file !
 static void	find_player(t_data *data)
 {
 	size_t	x;

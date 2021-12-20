@@ -19,6 +19,7 @@
 
 # include <stdlib.h>
 # include <errno.h>
+# include <unistd.h>
 # include "sl_color.h"
 # define EXIT_MSG_FAIL "Error\n"
 

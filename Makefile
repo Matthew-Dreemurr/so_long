@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/09 13:40:35 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/20 13:19:06 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ $(DEP_VECT):
 	make SANI=$(SANI) WRA=$(WRA) -C $(dir $(DEP_VECT))
 
 $(DEP_LIBMLX):
-	make SANI=$(SANI) -C $(dir $(DEP_LIBMLX))
+	make SANI=$(SANI) -sC $(dir $(DEP_LIBMLX))
 
 # wtf !? i don't understand why is work but it's work
 $(DEP_INCLUDE_DIR)%.h: %.h

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:31:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/08 16:41:19 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/20 13:13:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,8 @@ void	player_move(t_data *data, int y_move, int x_move)
 	if (y < 0 || y > data->map.size.y || x < 0 || x > data->map.size.x)
 		return ;
 	if (check_next_move(data->map.grid[y][x], data))
+	{
 		apply_move(data, y, x);
+		printf("Nb move: %lu\n", data->plyr.n_move);
+	}
 }

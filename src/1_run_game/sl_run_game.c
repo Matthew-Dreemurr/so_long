@@ -42,7 +42,7 @@ int	key_hook(int keycode, t_data *data)
 
 int	closed_windows(t_data *data)
 {
-	(void)data;
+	data->win = NULL;
 	exit_prog(EXIT_SUCCESS, "Game close\n", data);
 	return (1);
 }
