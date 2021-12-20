@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:31:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/20 13:13:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/20 15:35:14 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ static int	check_next_move(char c, t_data *data)
  */
 static void	apply_move(t_data *data, int y, int x)
 {
-	data->map.grid[y][x] = 'P';
-	sl_print_img(data, APLAYER, y, x);
 	data->map.grid[data->plyr.y][data->plyr.x] = '0';
 	sl_print_img(data, AGROUND, data->plyr.y, data->plyr.x);
+	if (data->map.grid[y][x] != '0')
+		sl_print_img(data, AGROUND, y, x);
+	sl_print_img(data, APLAYER, y, x);
+	data->map.grid[y][x] = 'P';
 	data->plyr.y = y;
 	data->plyr.x = x;
 }

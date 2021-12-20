@@ -60,9 +60,9 @@ void	sl_mlx_init(t_data *data)
 {
 	sl_mlx_window_init(data);
 	sl_init_texture(data);
-	sl_print_all_strict(data, '0', AGROUND);
-	sl_print_all_strict(data, '1', AWALL);
-	sl_print_all_strict(data, 'C', ACOLL);
-	sl_print_all_strict(data, 'E', AEXIT);
-	sl_print_all_strict(data, 'P', APLAYER);
+	sl_print_all_strict(data, "0ECP", AGROUND);
+	sl_print_all_strict(data, "1", AWALL);
+	sl_print_all_strict(data, "C", ACOLL);
+	sl_print_all_strict(data, "E", AEXIT);
+	sl_print_all_strict(data, "P", APLAYER);
 }

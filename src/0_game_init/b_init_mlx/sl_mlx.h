@@ -41,6 +41,6 @@
 
 void	sl_mlx_init(t_data *data);
 void	sl_print_img(t_data *data, int asset_index, int y, int x);
-void	sl_print_all_strict(t_data *data, char c, int texture);
+void	sl_print_all_strict(t_data *data, char *set, int texture);
 
 #endif
