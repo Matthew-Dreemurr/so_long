@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:34:58 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 16:52:34 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/20 13:47:43 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ int	key_d(t_data *data)
 
 int	key_esc(t_data *data)
 {
-	exit_prog(EXIT_SUCCESS, "EXIT!!\n", data);
+	exit_prog(EXIT_SUCCESS, "Game closed\n", data);
 	return (1);
 }

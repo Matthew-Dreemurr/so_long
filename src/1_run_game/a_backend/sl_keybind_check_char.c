@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:28:09 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 16:52:24 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/20 13:56:52 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "sl_run_game.h"
+#include "sl_run_game.h"
 
 int	char_0(t_data *data)
 {
@@ -37,12 +37,13 @@ int	char_e(t_data *data)
 		data->plyr.n_move++;
 	else
 		return (0);
+	printf("Total move: %lu\n", data->plyr.n_move);
 	exit_prog(EXIT_SUCCESS, "WIN !!\n", data);
 	return (1);
 }
 
 int	char_err(t_data *data)
 {
-	(void)data;
+	exit_prog(EXIT_FAILURE, "Map is possibly corrupted", data);
 	return (0);
 }
