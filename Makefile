@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/20 13:19:06 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/21 13:51:07 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,13 +48,46 @@ DEP_VECT	= vector-buffer/vector_buffer.a
 DEP_LIBMLX	= minilibx/libmlx.a 
 
 DEP_INCLUDE_DIR	= includes/
-HEADER			= $(shell find src -type f -name "*.h")
+HEADER			= \
+src/0_game_init/a_map_init/sl_map_init.h \
+src/0_game_init/b_init_mlx/sl_mlx.h \
+src/0_game_init/sl_game_init.h \
+src/1_run_game/sl_run_game.h \
+src/so_long.h \
+src/utils/exit_prog/sl_exit_prog.h \
+src/utils/sl_color.h \
+src/utils/sl_data_struct.h \
+src/utils/sl_error_msg.h
+
 HEADER			+= libft/includes/libft.h
 HEADER			+= vector-buffer/includes/vector.h
-HEADER			+= $(shell find $(dir $(DEP_LIBMLX)) -type f -name "*.h")
+HEADER			+= \
+minilibx/mlx.h \
+minilibx/mlx_int.h \
+minilibx/mlx_new_window.h \
+minilibx/mlx_opengl.h \
+minilibx/mlx_png.h
+
 HEADER_DEP		= $(addprefix $(DEP_INCLUDE_DIR), $(notdir $(HEADER)))
 
-SRCS	= $(shell find $(SRC_DIR) -type f -name "*.c")
+SRCS	= \
+src/0_game_init/a_map_init/map_check/check_map.c \
+src/0_game_init/a_map_init/map_check/check_map_border.c \
+src/0_game_init/a_map_init/map_check/check_map_charcater.c \
+src/0_game_init/a_map_init/map_check/check_map_shape.c \
+src/0_game_init/a_map_init/map_to_grid.c \
+src/0_game_init/a_map_init/open_map.c \
+src/0_game_init/b_init_mlx/sl_init_mlx.c \
+src/0_game_init/game_init.c \
+src/0_game_init/struct_init.c \
+src/1_run_game/a_backend/sl_keybind.c \
+src/1_run_game/a_backend/sl_keybind_check_char.c \
+src/1_run_game/a_backend/sl_move_check.c \
+src/1_run_game/a_frontend/sl_print_img.c \
+src/1_run_game/sl_run_game.c \
+src/so_long.c \
+src/utils/exit_prog/exit_prog.c
+
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
