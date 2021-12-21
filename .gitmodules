@@ -1,6 +1,0 @@
-[submodule "libft"]
-	path = libft
-	url = git@github.com:Matthew-Dreemurr/Libft.git
-[submodule "vector-buffer"]
-	path = vector-buffer
-	url = git@github.com:Matthew-Dreemurr/vector-buffer
