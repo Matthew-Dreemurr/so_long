@@ -51,6 +51,6 @@ void	sl_run_game(t_data *data)
 {
 	sl_mlx_init(data);
 	mlx_key_hook(data->win, key_hook, data);
-	mlx_hook(data->win, 17, 1L<<0, closed_windows, data);
+	mlx_hook(data->win, 17, 1L << 0, closed_windows, data);
 	mlx_loop(data->mlx);
 }
