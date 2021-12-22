@@ -51,3 +51,5 @@ This project has been coded according to the `NormeV3` standard.
   * [x] The map must be rectangular.
   * [x] You must be able to parse any kind of map, as long as it respects the rules of the map.
   * [x] If any misconfiguration of any kind is encountered in the file, the program must exit properly and return "Error\n" followed by an explicit error message of your choice.
+
+This work is published under the terms of **[42 Unlicense](https://github.com/gcamerli/42unlicense)**.
