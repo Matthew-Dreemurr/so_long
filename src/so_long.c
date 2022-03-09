@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:56:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/09 16:51:26 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/09 10:38:02 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	main(int ac, char **av)
 			NULL);
 	game_init(av[1], &data);
 	sl_run_game(&data);
-	exit_prog(EXIT_SUCCESS, "UwU", &data);
+	exit_prog(EXIT_SUCCESS, NULL, &data);
 	return (EXIT_SUCCESS);
 }
