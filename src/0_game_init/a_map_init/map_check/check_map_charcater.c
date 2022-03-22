@@ -27,9 +27,6 @@ static void	check_items_prerequisite(t_data *data)
 		exit_prog(EXIT_FAILURE, "Please fix the map\n", data);
 }
 
-/**
- * @brief 
- */
 static void	count_items(t_data *data, int index)
 {
 	if (index == WORDL_COLLEC)

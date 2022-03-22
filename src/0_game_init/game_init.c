@@ -43,12 +43,6 @@ static void	find_player(t_data *data)
 	}
 }
 
-/**
- * @brief 
- * 
- * @param map 
- * @param data 
- */
 void	game_init(char const *map_file, t_data *data)
 {
 	struct_init(data);

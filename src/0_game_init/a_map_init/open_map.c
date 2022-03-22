@@ -12,9 +12,6 @@
 
 #include "sl_map_init.h"
 
-/**
- * @brief 
- */
 static void	read_map(int fd, t_data *data)
 {
 	char		tmp[READ_SIZE + 1];

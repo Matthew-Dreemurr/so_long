@@ -12,11 +12,6 @@
 
 #include "sl_exit_prog.h"
 
-/**
- * @brief 
- * 
- * @param t_data 
- */
 static void	free_mlx_image(t_data *data)
 {
 	int	i;

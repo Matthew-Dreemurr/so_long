@@ -19,20 +19,12 @@
 
 # define ASSET_NB 5
 
-/**
- * @brief 
- * 
- */
 typedef struct s_coord
 {
 	ssize_t	x;
 	ssize_t	y;
 }t_coord;
 
-/**
- * @brief 
- * 
- */
 typedef struct s_player
 {
 	int		y;
@@ -48,10 +40,6 @@ typedef struct s_items
 	size_t	exit;
 }t_items;
 
-/**
- * @brief 
- * 
- */
 typedef struct s_map
 {
 	char	**grid;
@@ -67,10 +55,6 @@ typedef struct s_asset
 	int		y;
 }t_asset;
 
-/**
- * @brief 
- * 
- */
 typedef struct s_data
 {
 	t_player	plyr;
